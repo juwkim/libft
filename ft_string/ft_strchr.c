@@ -12,11 +12,11 @@
 
 #include "ft_string.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	while (*s && *s != (unsigned char)c)
+	while (*s && *s != c)
 		s++;
-	if (*s == (unsigned char)c)
+	if (*s == c)
 		return ((char *)s);
 	return (NULL);
 }
