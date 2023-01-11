@@ -14,11 +14,11 @@
 
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror -O3
-ARFLAGS				= 	-rsc
+ARFLAGS				= 	-rcs
 
 # Define the directories
 
-BUILD_DIR			=	build
+OBJ_DIR				=	obj
 INC_DIR				=	includes
 
 FT_IS_DIR			=	ft_is
@@ -31,72 +31,64 @@ FT_STRING_DIR		=	ft_string
 # Define the source files
 
 SRCS				=	$(wildcard */*.c)
-OBJS				=	$(patsubst %.c, $(BUILD_DIR)/%.o, $(SRCS))
-DEPS				=	$(patsubst %.c, $(BUILD_DIR)/%.d, $(SRCS))
+OBJS				=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 # Define the name
 
-NAME				=	lib.a
+NAME				=	libft.a
 
-all: $(NAME)
+all: START $(NAME)
+
+START:
+	@echo -n "$(YELLOW)[LIBFT]:\t$(DEF_COLOR)"
+	@echo -n "$(RED)[$(DEF_COLOR)"
 
 # Define the target rule
 $(NAME) : $(OBJS)
-	@$(AR) $(ARFLAGS) $@ $^
-	@echo "${GREEN}> Linking of the $(NAME) is success 🎉${END}"
+	@$(AR) $(ARFLAGS) $@ $^	
+	@echo -n "$(RED)]$(DEF_COLOR)"
+	@echo "$(GREEN) => 100%$(DEF_COLOR)"
 
-# Define the compile rules
-$(BUILD_DIR)/$(FT_IS_DIR)/%.o: $(FT_IS_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+$(OBJ_DIR)/%.o : %.c | OBJ_DIR_GUARD
+	@echo -n "$(YELLOW)=$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 
-$(BUILD_DIR)/$(FT_LIST_DIR)/%.o: $(FT_LIST_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-
-$(BUILD_DIR)/$(FT_MATH_DIR)/%.o: $(FT_MATH_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-
-$(BUILD_DIR)/$(FT_MEMORY_DIR)/%.o: $(FT_MEMORY_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-
-$(BUILD_DIR)/$(FT_PRINTF_DIR)/%.o: $(FT_PRINTF_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-
-$(BUILD_DIR)/$(FT_STRING_DIR)/%.o: $(FT_STRING_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+OBJ_DIR_GUARD:
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_IS_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_LIST_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_MATH_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_MEMORY_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_PRINTF_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_STRING_DIR)
 
 clean:
-	@$(RM) $(OBJS) $(DEPS)
-	@rm -rf $(BUILD_DIR)
-	@echo "${YELLOW}> All objects files of the $(NAME) have been deleted ❌${END}"
+	@$(RM) -r $(OBJ_DIR)
+	@echo "$(BLUE)[LIBFT]:\tobject files$(DEF_COLOR)$(GREEN)  => Cleaned!$(DEF_COLOR)"
 
-fclean:
-	@$(RM) $(OBJS) $(DEPS) $(NAME)
-	@rm -rf $(BUILD_DIR)
-	@echo "${YELLOW}> Cleaning of the $(NAME) has been done ❌${END}"
+fclean: clean
+	@$(RM) $(NAME)
+	@rm -rf $(OBJ_DIR)
+	@echo "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)  => Cleaned!$(DEF_COLOR)"
 
 re: fclean
 	@make all
+	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
-.PHONY:	all clean fclean re
+norm:
+	@(norminette . | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette success$(DEF_COLOR)")
 
-# minimal color codes
-END				=	$'\x1b[0m
-BOLD			=	$'\x1b[1m
-UNDER			=	$'\x1b[4m
-REV				=	$'\x1b[7m
-GREY			=	$'\x1b[30m
-RED				=	$'\x1b[31m
-GREEN			=	$'\x1b[32m
-YELLOW			=	$'\x1b[33m
-BLUE			=	$'\x1b[34m
-PURPLE			=	$'\x1b[35m
-CYAN			=	$'\x1b[36m
-WHITE			=	$'\x1b[37m
+.PHONY:	all clean fclean re norm
 
--include $(DEPS)
+#Colors
+
+DEF_COLOR	=	\033[0;39m
+YELLOW		=	\033[0;33m
+GRAY		=	\033[0;90m
+RED			=	\033[0;91m
+GREEN		=	\033[1;92m
+YELLOW		=	\033[1;93m
+BLUE		=	\033[0;94m
+MAGENTA		=	\033[0;95m
+CYAN		=	\033[0;96m
+WHITE		=	\033[0;97m

@@ -39,10 +39,10 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
 char	*ft_strnstr(const char *str, const char *to_find, int n);
 
 int		ft_strfind(char c, const char *str);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char *s1, char *set);
 
 char	*ft_substr(char const *s, int start, int len);
 
