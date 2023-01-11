@@ -80,7 +80,7 @@ norm:
 
 .PHONY:	all clean fclean re norm
 
-#Colors
+# Colors
 
 DEF_COLOR	=	\033[0;39m
 YELLOW		=	\033[0;33m
