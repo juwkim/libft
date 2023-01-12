@@ -12,8 +12,11 @@
 
 #include "ft_memory.h"
 
-void	ft_memset(unsigned char *ptr, unsigned char c, int n)
+void	ft_memset(void *ptr, unsigned char c, int n)
 {
+	unsinged char	*cur;
+	
+	cur = ptr;
 	while (n--)
-		*ptr++ = c;
+		*cur++ = c;
 }
