@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:45:32 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 03:24:39 by juwkim           ###   ########.fr       */
+/*   Created: 2023/01/13 02:47:23 by juwkim            #+#    #+#             */
+/*   Updated: 2023/01/13 02:49:54 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memory.h"
+#include "ft_string.h"
 
-void	ft_memset(unsigned char *ptr, unsigned char c, int n)
+void	ft_strreverse(char *begin, char *end)
 {
-	while (n--)
-		*ptr++ = c;
+	char	tmp;
+
+	while (begin < end)
+	{
+		tmp = *begin;
+		*begin = *end;
+		*end = tmp;
+		begin++;
+		end--;
+	}
 }

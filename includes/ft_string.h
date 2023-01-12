@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 14:02:09 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 02:51:37 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 # include "ft_is.h"
 # include "ft_memory.h"
-
-# define BUFFER_SIZE 8192
 
 char	*get_next_line(int fd);
 
@@ -43,6 +41,7 @@ char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
 char	*ft_strtrim(char *s1, char *set);
+void	ft_strreverse(char *begin, char *end);
 
 char	*ft_substr(char const *s, int start, int len);
 

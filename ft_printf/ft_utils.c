@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:07 by juwkim            #+#    #+#             */
-/*   Updated: 2022/12/16 19:59:13 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 03:05:21 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,29 +35,6 @@ int	_ft_itoa(char *buf, unsigned long num, int base, int lower)
 		if (num == 0)
 			break ;
 	}
-	reverse(buf, ptr);
+	ft_strreverse(buf, ptr - 1);
 	return (ptr - buf);
-}
-
-void	reverse(char *buf, char *end)
-{
-	char	tmp;
-
-	end--;
-	while (buf < end)
-	{
-		tmp = *buf;
-		*buf = *end;
-		*end = tmp;
-		buf++;
-		end--;
-	}
-}
-
-int	max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
 }
