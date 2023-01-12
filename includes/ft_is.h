@@ -21,5 +21,6 @@ int	ft_isupper(char c);
 int	ft_islower(char c);
 
 int	ft_isspace(char c);
+int	ft_isascii(int c);
 
 #endif
