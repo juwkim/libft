@@ -6,69 +6,77 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 01:58:01 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 06:31:55 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the compiler and flags
 
-CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -pipe -O3
-ARFLAGS				= 	-rcs
+CC					:=	cc
+CFLAGS				:=	-Wall -Wextra -Werror -pipe -O3
+ARFLAGS				:= 	-rcs
 
 # Define the directories
 
-SRC_DIR				=	ft_is ft_list ft_math ft_memory ft_printf ft_string
-OBJ_DIR				=	obj
-INC_DIR				=	includes
+SRC_DIR				:=	ft_is ft_list ft_math ft_memory ft_printf ft_string
+OBJ_DIR				:=	obj
+INC_DIR				:=	includes
 
 # Define the source files
 
-SRCS				=	$(wildcard */*.c)
-OBJS				=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
+SRCS				:=	$(wildcard */*.c)
+OBJS				:=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
+
+# Define the variables for progress bar
+
+TOTAL_FILES			:=	$(shell find . -type f -name *.c | wc -l)
+COMPILED_FILES		=	0
+STEP				:=	100
 
 # Define the name
 
-NAME				=	libft.a
+NAME				:=	libft.a
 
-all: start $(NAME) end
+# Define the rules
 
-start:
-	@echo -n "$(YELLOW)[LIBFT]:\t$(DEF_COLOR)"
-	@echo -n "$(RED)[$(DEF_COLOR)"
+all: $(NAME)
 
-end:
-	@echo -n "$(RED)]$(DEF_COLOR)"
-	@echo "$(GREEN) => 100%$(DEF_COLOR)"
-
-# Define the target rule
 $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
+	@printf "\n"
 
-$(OBJ_DIR)/%.o : %.c | OBJ_DIR_GUARD 
-	@echo -n "$(YELLOW)=$(DEF_COLOR)"
+$(OBJ_DIR)/%.o : %.c | dir_guard
+	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
+	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
+	@printf "                                                                                                   \r"
+	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $^\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 
-OBJ_DIR_GUARD:
+dir_guard:
 	@mkdir -p $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
+
+progress_bar:
+	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
+	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
+	@printf "                                                                                                   \r"
+	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $^\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
+
+norm:
+	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT]:\tNorminette Success\n$(DEF_COLOR)")
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@echo "$(BLUE)[LIBFT]:\tobject files$(DEF_COLOR)$(GREEN)  => Cleaned!$(DEF_COLOR)"
+	@printf "$(BLUE)[LIBFT]:\tobj. dep. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@rm -rf $(OBJ_DIR)
-	@echo "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)   => Cleaned!$(DEF_COLOR)"
+	@printf "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 re: fclean
-	@make all
-	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
+	@$(MAKE) all
+	@printf "$(GREEN)Cleaned and rebuilt everything for libft!\n$(DEF_COLOR)"
 
-norm:
-	@(norminette | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette Success$(DEF_COLOR)")
-
-.PHONY:	all clean fclean re norm OBJ_DIR_GUARD start end
+.PHONY:	all clean fclean re dir_guard norm progress_bar
 
 #Colors
 
