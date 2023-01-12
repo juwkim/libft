@@ -6,27 +6,21 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/09 14:04:06 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 01:58:01 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the compiler and flags
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -O3
+CFLAGS				=	-Wall -Wextra -Werror -pipe -O3
 ARFLAGS				= 	-rcs
 
 # Define the directories
 
+SRC_DIR				=	ft_is ft_list ft_math ft_memory ft_printf ft_string
 OBJ_DIR				=	obj
 INC_DIR				=	includes
-
-FT_IS_DIR			=	ft_is
-FT_LIST_DIR			=	ft_list
-FT_MATH_DIR			=	ft_math
-FT_MEMORY_DIR		=	ft_memory
-FT_PRINTF_DIR		=	ft_printf
-FT_STRING_DIR		=	ft_string
 
 # Define the source files
 
@@ -37,30 +31,26 @@ OBJS				=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 NAME				=	libft.a
 
-all: START $(NAME)
+all: start $(NAME) end
 
-START:
+start:
 	@echo -n "$(YELLOW)[LIBFT]:\t$(DEF_COLOR)"
 	@echo -n "$(RED)[$(DEF_COLOR)"
 
-# Define the target rule
-$(NAME) : $(OBJS)
-	@$(AR) $(ARFLAGS) $@ $^	
+end:
 	@echo -n "$(RED)]$(DEF_COLOR)"
 	@echo "$(GREEN) => 100%$(DEF_COLOR)"
 
-$(OBJ_DIR)/%.o : %.c | OBJ_DIR_GUARD
+# Define the target rule
+$(NAME) : $(OBJS)
+	@$(AR) $(ARFLAGS) $@ $^
+
+$(OBJ_DIR)/%.o : %.c | OBJ_DIR_GUARD 
 	@echo -n "$(YELLOW)=$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 
 OBJ_DIR_GUARD:
-	@mkdir -p $(OBJ_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_IS_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_LIST_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_MATH_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_MEMORY_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_PRINTF_DIR)
-	@mkdir -p $(OBJ_DIR)/$(FT_STRING_DIR)
+	@mkdir -p $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
@@ -69,18 +59,18 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@rm -rf $(OBJ_DIR)
-	@echo "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)  => Cleaned!$(DEF_COLOR)"
+	@echo "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)   => Cleaned!$(DEF_COLOR)"
 
 re: fclean
 	@make all
 	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
 norm:
-	@(norminette | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette success$(DEF_COLOR)")
+	@(norminette . | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette Success$(DEF_COLOR)")
 
-.PHONY:	all clean fclean re norm
+.PHONY:	all clean fclean re norm OBJ_DIR_GUARD start end
 
-# Colors
+#Colors
 
 DEF_COLOR	=	\033[0;39m
 YELLOW		=	\033[0;33m
