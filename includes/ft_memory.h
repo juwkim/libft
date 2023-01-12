@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 
-void	ft_memset(unsigned char *ptr, unsigned char c, int n);
+void	ft_memset(void *ptr, unsigned char c, int n);
 void	ft_bzero(char *ptr, int n);
 void	*ft_calloc(int nmemb, int size);
 
