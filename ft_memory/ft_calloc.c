@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:03:51 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 11:52:54 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 04:09:47 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(int nmemb, int size)
 {
-	char	*buf;
+	void	*buf;
 
 	buf = malloc(nmemb * size);
 	if (buf == NULL)

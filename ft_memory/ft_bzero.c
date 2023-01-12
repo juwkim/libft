@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:03:25 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 11:50:45 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 04:09:32 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-void	ft_bzero(char *ptr, int n)
+void	ft_bzero(void *ptr, int n)
 {
 	ft_memset(ptr, 0, n);
 }

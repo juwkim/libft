@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:17:32 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 03:25:01 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 04:09:29 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 
 void	ft_memset(void *ptr, unsigned char c, int n);
-void	ft_bzero(char *ptr, int n);
+void	ft_bzero(void *ptr, int n);
 void	*ft_calloc(int nmemb, int size);
 
 char	*ft_memchr(char *s, char c, int n);
