@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 06:31:55 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 06:41:04 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,17 +49,11 @@ $(OBJ_DIR)/%.o : %.c | dir_guard
 	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
 	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
 	@printf "                                                                                                   \r"
-	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $^\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
+	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $<\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 
 dir_guard:
 	@mkdir -p $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
-
-progress_bar:
-	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
-	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
-	@printf "                                                                                                   \r"
-	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $^\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
 
 norm:
 	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT]:\tNorminette Success\n$(DEF_COLOR)")
@@ -76,7 +70,7 @@ re: fclean
 	@$(MAKE) all
 	@printf "$(GREEN)Cleaned and rebuilt everything for libft!\n$(DEF_COLOR)"
 
-.PHONY:	all clean fclean re dir_guard norm progress_bar
+.PHONY:	all clean fclean re dir_guard norm
 
 #Colors
 
