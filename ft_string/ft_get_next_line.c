@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 02:51:24 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/13 04:11:59 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	check_rest(char **rest, char **rtn)
 
 char	*get_next_line(int fd)
 {
-	const int buffer_size = 8192;
+	const int	buffer_size = 8192;
 	static char	*rest;
-	char		buf[buffer_size + 1];
+	char		buf[8192 + 1];
 	char		*rtn;
 	ssize_t		read_size;
 
