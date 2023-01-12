@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 06:41:04 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 06:52:44 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,14 +43,14 @@ all: $(NAME)
 
 $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@printf "\n"
+	@printf "\n$(MAGENTA)Linking Success $@\n$(DEF_COLOR)"
 
 $(OBJ_DIR)/%.o : %.c | dir_guard
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
 	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
 	@printf "                                                                                                   \r"
-	@printf "$(YELLOW)[LIBFT] [%02d/%02d] (%6.2f%%) Compiling $<\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
+	@printf "$(YELLOW)[LIBFT] [%02d/%02d] ( %3d %%) Compiling $<\r$(DEF_COLOR)" $(COMPILED_FILES) $(TOTAL_FILES) $(PROGRESS)
 
 dir_guard:
 	@mkdir -p $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
