@@ -66,7 +66,7 @@ re: fclean
 	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
 norm:
-	@(norminette . | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette Success$(DEF_COLOR)")
+	@(norminette | grep Error) || (echo "$(GREEN)[LIBFT]:\tNorminette Success$(DEF_COLOR)")
 
 .PHONY:	all clean fclean re norm OBJ_DIR_GUARD start end
 
