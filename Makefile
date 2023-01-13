@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 12:01:46 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 13:02:45 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@printf "\n$(MAGENTA)Linking Success $@\n$(DEF_COLOR)"
+	@printf "\n$(MAGENTA)[LIBFT] Linking Success\n$(DEF_COLOR)"
 
 $(OBJ_DIR)/%.o : %.c | dir_guard
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
