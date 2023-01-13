@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:47:14 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 10:17:34 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/14 02:55:57 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**ft_split(char const *s, char c)
 	char	**buf;
 
 	buf = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (s == NULL || buf == NULL)
+	if (buf == NULL)
 		return (NULL);
 	words_idx = 0;
 	while (*s)

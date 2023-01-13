@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 13:02:45 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/14 04:51:09 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ARFLAGS				:= 	-rcs
 
 # Define the directories
 
-SRC_DIR				:=	ft_is ft_list ft_math ft_memory ft_printf ft_string
+SRC_DIR				:=	ft_error ft_is ft_list ft_math ft_memory ft_printf ft_string
 OBJ_DIR				:=	obj
 INC_DIR				:=	includes
 
@@ -30,7 +30,7 @@ OBJS				:=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 # Define the variables for progress bar
 
 TOTAL_FILES			:=	$(shell find . -type f -name *.c | wc -l)
-COMPILED_FILES		=	0
+COMPILED_FILES		:=	0
 STEP				:=	100
 
 # Define the name
