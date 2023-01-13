@@ -19,5 +19,5 @@ int	ft_memcmp(const char *s1, const char *s2, int n)
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
