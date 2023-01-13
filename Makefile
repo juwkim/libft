@@ -13,7 +13,7 @@
 # Define the compiler and flags
 
 CC					:=	cc
-CFLAGS				:=	-Wall -Wextra -Werror -pipe -O3
+CFLAGS				:=	-Wall -Wextra -Werror -O2 -pipe
 ARFLAGS				:= 	-rcs
 
 # Define the directories
