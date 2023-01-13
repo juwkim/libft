@@ -68,7 +68,7 @@ fclean: clean
 
 re: fclean
 	@$(MAKE) all
-	@printf "$(GREEN)Cleaned and rebuilt everything for libft!\n$(DEF_COLOR)"
+	@printf "$(GREEN)Cleaned and Rebuilt everything for libft!\n$(DEF_COLOR)"
 
 .PHONY:	all clean fclean re dir_guard norm
 
