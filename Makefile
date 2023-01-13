@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/14 04:51:09 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/14 08:51:38 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ NAME				:=	libft.a
 
 # Define the rules
 
-all: $(NAME)
+all:
+	@$(MAKE) -j $(NAME)
 
 $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
@@ -67,7 +68,7 @@ fclean: clean
 	@printf "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 re: fclean
-	@$(MAKE) all
+	@$(MAKE) -j all
 	@printf "$(GREEN)Cleaned and Rebuilt everything for libft!\n$(DEF_COLOR)"
 
 .PHONY:	all clean fclean re dir_guard norm
