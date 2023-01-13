@@ -72,7 +72,7 @@ re: fclean
 
 .PHONY:	all clean fclean re dir_guard norm
 
-#Colors
+# Colors
 
 DEF_COLOR	=	\033[1;39m
 YELLOW		=	\033[1;33m
