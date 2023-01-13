@@ -6,14 +6,14 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/13 06:52:44 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/13 12:01:46 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the compiler and flags
 
 CC					:=	cc
-CFLAGS				:=	-Wall -Wextra -Werror -O2 -pipe
+CFLAGS				:=	-Wall -Wextra -Werror -march=native -O2 -pipe
 ARFLAGS				:= 	-rcs
 
 # Define the directories
@@ -74,13 +74,13 @@ re: fclean
 
 #Colors
 
-DEF_COLOR	=	\033[0;39m
-YELLOW		=	\033[0;33m
-GRAY		=	\033[0;90m
-RED			=	\033[0;91m
+DEF_COLOR	=	\033[1;39m
+YELLOW		=	\033[1;33m
+GRAY		=	\033[1;90m
+RED			=	\033[1;91m
 GREEN		=	\033[1;92m
 YELLOW		=	\033[1;93m
-BLUE		=	\033[0;94m
-MAGENTA		=	\033[0;95m
-CYAN		=	\033[0;96m
-WHITE		=	\033[0;97m
+BLUE		=	\033[1;94m
+MAGENTA		=	\033[1;95m
+CYAN		=	\033[1;96m
+WHITE		=	\033[1;97m
