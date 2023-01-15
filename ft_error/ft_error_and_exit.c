@@ -12,8 +12,9 @@
 
 #include "ft_error.h"
 
-void	ft_error_and_exit(void)
+void	ft_error_and_exit(const char *message)
 {
 	ft_fprintf(STDERR, "Error\n");
+	ft_fprintf(STDERR, "%s\n", message);
 	exit(EXIT_FAILURE);
 }
