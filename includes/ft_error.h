@@ -15,6 +15,6 @@
 
 # include "ft_printf.h"
 
-void	ft_error_and_exit(void);
+void	ft_fprintf(STDERR, "%s\n", message);
 
 #endif
