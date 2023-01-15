@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/14 08:51:38 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/15 10:32:10 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ all:
 
 $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@printf "\n$(MAGENTA)[LIBFT] Linking Success\n$(DEF_COLOR)"
+	@printf "\n$(MAGENTA)[LIBFT] Make Success\n$(DEF_COLOR)"
 
 $(OBJ_DIR)/%.o : %.c | dir_guard
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
@@ -68,7 +68,7 @@ fclean: clean
 	@printf "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 re: fclean
-	@$(MAKE) -j all
+	@$(MAKE) all
 	@printf "$(GREEN)Cleaned and Rebuilt everything for libft!\n$(DEF_COLOR)"
 
 .PHONY:	all clean fclean re dir_guard norm
