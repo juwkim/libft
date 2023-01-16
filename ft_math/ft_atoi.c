@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:01:30 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/15 21:18:53 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/16 13:55:52 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	int		num;
+	int		dnum;
+	t_sign	sign;
 
-	res = 0;
-	sign = 1;
-	while (*str && ft_isspace(*str))
-		str++;
-	while (*str)
+	sign = PLUS;
+	if (ft_strfind(*str, "+-") != -1)
+		sign = (*str++ == '-');
+	num = 0;
+	while (ft_isdigit(*str))
 	{
-		if (*str == '-')
-			sign *= -1;
-		else if (*str != '+')
-			break ;
-		str++;
+		if (sign == PLUS)
+			dnum = (*str++ - '0');
+		else
+			dnum = - (*str++ - '0');
+		if (ft_is_mul_overflow(num, 10))
+			ft_error_and_exit("size of integer is so big");
+		if (ft_is_add_overflow(num * 10, dnum))
+			ft_error_and_exit("size of integer is so big");
+		num = num * 10 + dnum;
 	}
-	while (*str && ft_isdigit(*str))
-		res = res * 10 + *str++ - '0';
-	return (sign * res);
+	if (*str != '\0')
+		ft_error_and_exit("bad chracter while parsing integer");
+	return (num);
 }
