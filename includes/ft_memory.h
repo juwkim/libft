@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:17:32 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 04:09:29 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/17 14:05:33 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_bzero(void *ptr, int n);
 void	*ft_calloc(int nmemb, int size);
 
 char	*ft_memchr(char *s, char c, int n);
-char	*ft_memcpy(char *dest, char *src, int n);
+void	ft_memcpy(void *dest, void *src, size_t n);
 char	*ft_memmove(char *dst, char *src, int len);
 int		ft_memcmp(const char *s1, const char *s2, int n);
 

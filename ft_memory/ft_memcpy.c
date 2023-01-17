@@ -6,20 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:41:23 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 11:59:56 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/17 14:28:35 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-char	*ft_memcpy(char *dest, char *src, int n)
+void	ft_memcpy(void *dest, void *src, size_t n)
 {
-	char	*ptr;
+	unsigned char	*dest_ptr;
+	unsigned char	*src_ptr;
 
-	if (n == 0 || dest == src)
-		return (dest);
-	ptr = dest;
+	dest_ptr = (unsigned char *) dest;
+	src_ptr = (unsigned char *) src;
 	while (n--)
-		*ptr++ = *src++;
-	return (dest);
+		*dest_ptr++ = *src_ptr++;
 }

@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:43:39 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 06:41:40 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/17 09:34:50 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ int	ft_islower(char c);
 int	ft_isspace(char c);
 int	ft_isascii(int c);
 
-#endif
+#endif // FT_IS_H
