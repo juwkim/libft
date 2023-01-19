@@ -6,19 +6,19 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/16 15:02:32 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/18 03:06:26 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the compiler and flags
 
 CC					:=	cc
-CFLAGS				:=	-Wall -Wextra -Werror -march=native -O2 -pipe -fsanitize=leak -fsanitize=address
+CFLAGS				:=	-Wall -Wextra -Werror -march=native -O2 -pipe
 ARFLAGS				:= 	-rcs
 
 # Define the directories
 
-SRC_DIR				:=	ft_error ft_is ft_list ft_math ft_memory ft_printf ft_string
+SRC_DIR				:=	ft_error ft_is ft_math ft_memory ft_printf ft_string
 OBJ_DIR				:=	obj
 INC_DIR				:=	includes
 

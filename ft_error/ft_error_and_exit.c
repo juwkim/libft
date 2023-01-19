@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 02:26:15 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/14 02:28:45 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/18 05:07:25 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_error_and_exit(const char *message)
 {
 	ft_fprintf(STDERR, "Error\n");
-	ft_fprintf(STDERR, "%s\n", message);
+	(void) message;
 	exit(EXIT_FAILURE);
 }

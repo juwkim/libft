@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 06:41:53 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/18 03:54:42 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_rest(char **rest, char **rtn)
 	char	*temp;
 
 	len = ft_strlen(*rest);
-	idx = ft_strchr(*rest, '\n') - *rest;
+	idx = ft_strfind(*rest, '\n');
 	if (-1 < idx && idx < len - 1)
 	{
 		*rtn = ft_substr(*rest, 0, idx);

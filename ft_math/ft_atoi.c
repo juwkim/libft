@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:01:30 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/16 13:55:52 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/18 03:58:40 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 	t_sign	sign;
 
 	sign = PLUS;
-	if (ft_strfind(*str, "+-") != -1)
+	if (ft_strfind("+-", *str) != -1)
 		sign = (*str++ == '-');
 	num = 0;
 	while (ft_isdigit(*str))

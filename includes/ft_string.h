@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 02:51:37 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/01/18 03:55:29 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strncmp(const char *s1, const char *s2, int n);
 char	*ft_strnstr(const char *str, const char *to_find, int n);
 
-int		ft_strfind(char c, const char *str);
+int		ft_strfind(const char *str, char c);
 char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
