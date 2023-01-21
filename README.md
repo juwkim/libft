@@ -1,2 +1,2 @@
 # libft
-Libft - OK 125% (Bonus included)
+libft - OK 125% (Bonus included)
