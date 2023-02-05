@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 13:40:21 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/03 19:29:03 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ char	*ft_itoa(int n)
 	int			len;
 	int			end;
 
-	num = (long long)n;
+	num = (long long) n;
 	len = ft_intlen(num);
-	buf = (char *)malloc(sizeof(char) * (len + 1));
+	buf = (char *) malloc(sizeof(char) * (len + 1));
 	if (buf == NULL)
 		return (NULL);
 	buf[len] = '\0';

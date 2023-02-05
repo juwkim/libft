@@ -6,19 +6,23 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/01/18 03:06:26 by juwkim           ###   ########.fr        #
+#    Updated: 2023/01/28 18:04:23 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the compiler and flags
 
 CC					:=	cc
-CFLAGS				:=	-Wall -Wextra -Werror -march=native -O2 -pipe
+CFLAGS				:=	-Wall -Wextra -Werror -march=native -O2 -pipe -fsanitize=address
 ARFLAGS				:= 	-rcs
+
+ifeq ($(shell uname -s), Linux)
+	CFLAGS += -Wno-unused-result -fsanitize=leak
+endif
 
 # Define the directories
 
-SRC_DIR				:=	ft_error ft_is ft_math ft_memory ft_printf ft_string
+SRC_DIR				:=	ft_error ft_is ft_math ft_memory ft_printf ft_string ft_list
 OBJ_DIR				:=	obj
 INC_DIR				:=	includes
 
@@ -57,15 +61,15 @@ dir_guard:
 	@mkdir -p $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
 norm:
-	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT]:\tNorminette Success\n$(DEF_COLOR)")
+	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT] Norminette Success\n$(DEF_COLOR)")
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@printf "$(BLUE)[LIBFT]:\tobj. dep. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
+	@printf "$(BLUE)[LIBFT] obj. dep. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "$(CYAN)[LIBFT]:\texec. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
+	@printf "$(CYAN)[LIBFT] exec. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 re: fclean
 	@$(MAKE) all
