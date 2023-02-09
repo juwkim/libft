@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/03 23:56:11 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/09 05:12:58 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*get_next_line(int fd);
 char	**ft_split(char const *s, char c);
 void	ft_free_array(char **split);
 
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strcjoin(const char *s1, const char *s2, char c);
 
 char	*ft_strdup(const char *s);
 char	*ft_strndup(const char *s, size_t n);
