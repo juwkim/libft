@@ -6,12 +6,11 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/09 05:12:03 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/10 06:36:37 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
-
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
