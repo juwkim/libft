@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/10 06:36:37 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/10 08:54:21 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (s1 == NULL)
 		return ((char *) s2);
 	if (s2 == NULL)
-		return ((char *) s1);
+		return (NULL);
 	s1_size = ft_strlen(s1);
 	s2_size = ft_strlen(s2);
 	buf = (char *) malloc(sizeof(char) * (s1_size + s2_size + 1));
