@@ -6,21 +6,15 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 17:05:43 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/27 22:38:28 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/12 15:44:08 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-void	ft_free_array(char **array)
+void	ft_free_array(char	**array, int n)
 {
-	int	idx;
-
-	idx = 0;
-	while (array[idx] != NULL)
-	{
-		free(array[idx]);
-		++idx;
-	}
+	while (n)
+		free(array[--n]);
 	free(array);
 }

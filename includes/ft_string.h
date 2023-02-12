@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/09 05:12:58 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/12 15:44:13 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 char	*get_next_line(int fd);
 
 char	**ft_split(char const *s, char c);
-void	ft_free_array(char **split);
+void	ft_free_array(char	**array, int n);
 
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strcjoin(const char *s1, const char *s2, char c);
@@ -37,6 +37,7 @@ int		ft_strlcpy(char *dest, const char *src, size_t size);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, int n);
 

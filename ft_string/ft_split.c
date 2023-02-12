@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:47:14 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/09 08:06:39 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/12 12:27:06 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_count_words(char const *s, char c)
 	int	cnt;
 
 	cnt = 0;
-	while (s && *s)
+	while (*s)
 	{
 		if (*s != c && (*(s + 1) == '\0' || *(s + 1) == c))
 			cnt++;
