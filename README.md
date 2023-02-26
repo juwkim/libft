@@ -17,7 +17,7 @@
 <h3 align="center">
 	<a href="#-about-the-project">About</a>
 	<span> · </span>
-	<a href="#-usage">Usage</a>
+	<a href="#%EF%B8%8F-usage">Usage</a>
 </h3>
 
 ---
@@ -32,9 +32,6 @@
 	to extend your list of functions in your own way!
 
 For more detailed information, look at the [**subject of this project**](https://github.com/juwkim/42cursus/tree/main/Subject%20PDFs).
-
-**NOTE:** To be successful with moulinette on this project I had to put all the files in the same directory.
-I have just put them in folders and modified the Makefile to have a better organized repository.
 
 ## List of functions:
 
@@ -104,7 +101,7 @@ I have just put them in folders and modified the Makefile to have a better organ
 
 ### Requirements
 
-The library is written in C language and needs the **`gcc` compiler** and some standard **C libraries** to run.
+The library is written in C language and needs the **`c` compiler** and some standard **C libraries** to run.
 
 ### Instructions
 
@@ -112,21 +109,11 @@ The library is written in C language and needs the **`gcc` compiler** and some s
 
 To compile the library, go to its path and run:
 
-For all mandatory functions:
-
 ```shell
 $ make
 ```
 
-For bonus functions:
-
-```shell
-$ make bonus
-```
-
-**2. Cleaning all binary (.o) and executable files (.a)**
-
-To clean all files generated while doing a make, go to the path and run:
+**2. Cleaning all object files (.o) and executable files (.a)**
 
 ```shell
 $ make fclean
@@ -139,12 +126,3 @@ To use the library functions in your code, simply include its header:
 ```C
 #include "libft.h"
 ```
-
-## 📋 Testing
-
-You can use any of this third party testers to test the project
-
-
-* [Tripouille/libfTester](https://github.com/Tripouille/libftTester)
-* [ska42/libft-war-machine](https://github.com/ska42/libft-war-machine)
-* [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
