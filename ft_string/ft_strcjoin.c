@@ -6,12 +6,20 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:58:09 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:25:46 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
+/**
+ * @brief
+ * @param str1 
+ * @param str2 
+ * @param c 
+ * @return
+ * Returns a string joined with one character c between str1 and str2.
+ */
 char	*ft_strcjoin(const char *str1, const char *str2, char c)
 {
 	char	*buf;

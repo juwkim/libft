@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __sprintf_out.c                                    :+:      :+:    :+:   */
+/*   ft_sprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 21:57:31 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 23:06:12 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:52:33 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@ static char	**__buf(void);
 static char	*__get_buf(void);
 void		__set_buf(char *buf);
 
+/**
+ * @brief 
+ * Print formatted output into a string.
+ * @param buf
+ * A pointer to the buffer where you want to function
+ * to store the formatted string.
+ * @param fmt
+ * A string that specifies the format of the output.
+ * @param ... 
+ * @return
+ * The number of characters written,
+ * or a negative value if an output error occurred
+ */
 int	ft_sprintf(char *buf, const char *fmt, ...)
 {
 	va_list	args;

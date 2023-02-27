@@ -33,7 +33,7 @@ enum
 };
 
 unsigned char	__toascii(char c);
-unsigned short	__ctype_b_loc(unsigned char c);
+unsigned short	__ctype_table(unsigned char c);
 
 bool			ft_isascii(char c);
 bool			ft_isalnum(char c);

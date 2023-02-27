@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:19:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:15:09 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:22:08 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 /**
  * @brief 
- * Appends the src string to the dest string.
+ * Copies the string pointed to by src,
+ * including the terminating null byte ('\0'),
+ * to the buffer pointed to by dest. 
  * @param dest 
  * @param src 
  */
-void	ft_strcat(char *dest, const char *src)
+void	ft_strcpy(char *dest, const char *src)
 {
-	ft_strcpy(dest + ft_strlen(dest), src);
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
 }

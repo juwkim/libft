@@ -6,14 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:04:38 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 17:53:16 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:32:35 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
 
+/**
+ * @brief 
+ * checks for hexadecimal digits,
+ * that is, one of 0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F.
+ */
 bool	ft_isxdigit(char c)
 {
 	assert(ft_isascii(c) == true);
-	return (__ctype_b_loc(c) & xdigit);
+	return ((__ctype_table(c) & xdigit) != 0);
 }

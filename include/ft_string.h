@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:54:52 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:14:08 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	ft_strncat(char *dest, const char *src, size_t n);
 
 char	*ft_strchr(const char *str, const char c);
 char	*ft_strrchr(const char *str, const char c);
+
+void	ft_strcpy(char *dest, const char *src);
 
 int		ft_strlen(const char *str);
 

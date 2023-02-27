@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:47:14 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:58:02 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:09:49 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 static int	__count_words(char const *s, char c);
 
+/**
+ * @brief 
+ * Splits the string that s points to based on delim.
+ * @param s 
+ * @param delim 
+ * @return Return an array of splited strings.
+ */
 char	**ft_split(char const *s, const char delim)
 {
 	int				idx;

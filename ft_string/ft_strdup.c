@@ -6,12 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:39:40 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:58:54 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:24:15 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
+/**
+ * @brief 
+ * Copy the string from begin to end - 1.
+ * @param begin 
+ * @param end 
+ * @return Returns the copied string.
+ */
 char	*ft_strdup(const char *begin, const char *end)
 {
 	char		*copy;

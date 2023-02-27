@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 23:52:40 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:53:57 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 static bool	check_rest(char **rest, char **line);
 static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn);
 
+/**
+ * @brief
+ * Read a line from the fd.
+ * @param fd
+ * A file descriptor that's associated with the file.
+ * @return char* 
+ */
 char	*get_next_line(int fd)
 {
 	static char	*rest;

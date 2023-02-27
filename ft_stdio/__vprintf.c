@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __vprintf_out.c                                    :+:      :+:    :+:   */
+/*   __vprintf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 21:02:11 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 23:05:15 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:41:40 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	(*__get_vprintf_out_func(int fd, char *buf))(const char *str, int len)
 	if (buf == NULL)
 	{
 		__set_fd(fd);
-		return (__fprintf_out);
+		return (__dprintf_out);
 	}
 	else
 	{

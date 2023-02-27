@@ -6,12 +6,17 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:41:23 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:56:09 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:07:05 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
+/**
+ * @brief
+ * Copies n bytes from memory area src to memory area dest.
+ * The memory areas must not overlap.
+ */
 void	ft_memcpy(void *const dest, const void *const begin, \
 											const void *const end)
 {

@@ -6,12 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:03:51 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 20:50:21 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:58:19 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
 
+/**
+ * @brief 
+ * Allocates memory for an array of nmemb elements of size bytes each.
+ * @param nmemb 
+ * @param size 
+ * @return returns a pointer to the allocated memory.
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*buf;

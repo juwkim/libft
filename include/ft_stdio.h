@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 23:10:48 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:41:23 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ typedef struct s_opt
 /* ft_printf.c */
 int		ft_printf(const char *format, ...);
 
-/* ft_fprintf.c */
-int		ft_fprintf(int fd, const char *fmt, ...);
+/* ft_dprintf.c */
+int		ft_dprintf(int fd, const char *fmt, ...);
 void	__set_fd(int fd);
-int		__fprintf_out(const char *str, int len);
+int		__dprintf_out(const char *str, int len);
 
 /* ft_sprintf.c */
 int		ft_sprintf(char *buf, const char *fmt, ...);

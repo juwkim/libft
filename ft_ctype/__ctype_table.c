@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __ctype_b_loc.c                                    :+:      :+:    :+:   */
+/*   __ctype_table.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 13:45:43 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 17:51:05 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:01:35 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
 
-unsigned short	__ctype_b_loc(unsigned char c)
+unsigned short	__ctype_table(unsigned char c)
 {
 	static const unsigned short	table[128] = \
 	{

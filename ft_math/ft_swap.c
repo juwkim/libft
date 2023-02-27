@@ -6,12 +6,16 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:23:15 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/14 15:26:20 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:39:26 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
+/**
+ * @brief 
+ * Exchange values of a and b.
+ */
 void	ft_swap(int *a, int *b)
 {
 	int	temp;

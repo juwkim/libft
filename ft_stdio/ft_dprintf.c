@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __fprintf_out.c                                    :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:02:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 23:05:40 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 00:49:11 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,20 @@ static int	*__fd(void);
 static int	__get_fd(void);
 void		__set_fd(int fd);
 
-int	ft_fprintf(int fd, const char *fmt, ...)
+/**
+ * @brief 
+ * Writes output to the file associated with the file descriptor fd,
+ * under control of the format specifier.
+ * @param fd
+ * A file descriptor that's associated with the file.
+ * @param fmt
+ * A string that specifies the format of the output.
+ * @param ... 
+ * @return
+ * The number of characters written,
+ * or a negative value if an output error occurred
+ */
+int	ft_dprintf(int fd, const char *fmt, ...)
 {
 	va_list	args;
 	int		printed;
@@ -29,7 +42,7 @@ int	ft_fprintf(int fd, const char *fmt, ...)
 	return (printed);
 }
 
-int	__fprintf_out(const char *str, int len)
+int	__dprintf_out(const char *str, int len)
 {
 	return (write(__get_fd(), str, len));
 }

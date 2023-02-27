@@ -6,12 +6,21 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:39:40 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:00:40 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
 
+/**
+ * @brief 
+ * Converts an integer to a string.
+ * @param buf 
+ * @param num 
+ * @param base 
+ * @param lower 
+ * @return Returns the length of the converted string.
+ */
 int	ft_itoa(char *buf, unsigned long num, int base, int lower)
 {
 	static const char	digits[16] = "0123456789ABCDEF";

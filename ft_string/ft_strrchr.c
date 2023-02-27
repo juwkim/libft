@@ -6,12 +6,20 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:29:35 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
+/**
+ * @brief 
+ * @param str 
+ * @param c 
+ * @return
+ * Returns a pointer to the last occurrence
+ * of the character c in the string str. 
+ */
 char	*ft_strrchr(const char *str, const char c)
 {
 	const char	*ptr;
