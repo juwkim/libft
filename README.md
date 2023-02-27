@@ -31,7 +31,7 @@
 	The library will help you for your future projects in C. Through this project, you have the opportunity
 	to extend your list of functions in your own way!
 
-For more detailed information, look at the [**subject of this project**](https://github.com/juwkim/42cursus/tree/main/Subject%20PDFs).
+For more detailed information, look at the [**subject of this project**](https://github.com/juwkim/42cursus/blob/main/Subject%20PDFs/00_Libft.pdf).
 
 ## List of functions:
 
