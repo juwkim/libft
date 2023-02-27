@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:06:52 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 09:51:35 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:46:38 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-int	ft_isdigit(char c)
+bool	ft_isdigit(char c)
 {
-	return ('0' <= c && c <= '9');
+	return (__get_table(__toascii(c)) & digit);
 }

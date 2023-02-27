@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:01:44 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/16 13:56:41 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:53:39 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 # include <stdint.h>
 # include <stdbool.h>
 
-# include "ft_is.h"
-# include "ft_error.h"
-# include "ft_string.h"
-# include "ft_memory.h"
+# include "libft.h"
 
 typedef enum s_sign
 {

@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is.h                                            :+:      :+:    :+:   */
+/*   __toascii.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 09:43:39 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/17 09:34:50 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 14:42:44 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 14:46:14 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_IS_H
-# define FT_IS_H
+unsigned char	__toascii(char c)
+{
+	const unsigned char	d = c;
 
-int	ft_isalpha(char c);
-int	ft_isdigit(char c);
-int	ft_isalnum(char c);
-
-int	ft_isupper(char c);
-int	ft_islower(char c);
-
-int	ft_isspace(char c);
-int	ft_isascii(int c);
-
-#endif // FT_IS_H
+	return (d & 0x7f);
+}

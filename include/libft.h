@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.h                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 02:26:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/15 20:53:44 by juwkim           ###   ########.fr       */
+/*   Created: 2023/01/13 01:10:52 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 14:55:06 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ERROR_H
-# define FT_ERROR_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
+# include "ft_is.h"
+# include "ft_math.h"
+# include "ft_memory.h"
 # include "ft_printf.h"
+# include "ft_string.h"
 
-void	ft_error_and_exit(const char *message);
-
-#endif
+#endif // LIBFT_H

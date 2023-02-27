@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_and_exit.c                                :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 02:26:15 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/18 05:07:25 by juwkim           ###   ########.fr       */
+/*   Created: 2023/01/09 09:49:12 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 14:46:41 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_error.h"
+#include "ft_is.h"
 
-void	ft_error_and_exit(const char *message)
+bool	ft_isgraph(char c)
 {
-	ft_fprintf(STDERR, "Error\n");
-	(void) message;
-	exit(EXIT_FAILURE);
+	return (__get_table(__toascii(c)) & graph);
 }

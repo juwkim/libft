@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 06:12:51 by juwkim            #+#    #+#             */
-/*   Updated: 2022/10/12 18:39:06 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 15:03:09 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_get_width(const char **fmt)
 	int	width;
 
 	width = 0;
-	if ('0' <= **fmt && **fmt <= '9')
+	if (ft_isdigit(**fmt) == true)
 		width = ft_skip_atoi(fmt);
 	return (width);
 }
@@ -53,7 +53,7 @@ void	ft_set_prec(const char **fmt, t_opt *opt)
 	{
 		(*fmt)++;
 		opt->dot = 1;
-		if ('0' <= **fmt && **fmt <= '9')
+		if (ft_isdigit(**fmt) == true)
 			opt->prec = ft_skip_atoi(fmt);
 	}
 }

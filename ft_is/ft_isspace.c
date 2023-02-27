@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:31:39 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 09:51:57 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:46:55 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-int	ft_isspace(char c)
+bool	ft_isspace(char c)
 {
-	return ((c == ' ') || ((9 <= c) && (c <= 13)));
+	return (__get_table(__toascii(c)) & space);
 }

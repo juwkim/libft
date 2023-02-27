@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:07 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 03:05:21 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 15:03:34 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_skip_atoi(const char **s)
 	int	num;
 
 	num = 0;
-	while ('0' <= **s && **s <= '9')
+	while (ft_isdigit(**s) == true)
 		num = num * 10 + *((*s)++) - '0';
 	return (num);
 }

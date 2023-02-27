@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isxdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 02:06:40 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 15:06:07 by juwkim           ###   ########.fr       */
+/*   Created: 2022/08/29 02:04:38 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 14:47:01 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-bool	ft_isascii(char c)
+bool	ft_isxdigit(char c)
 {
-	return ((c & ~0x7f) == 0);
+	return (__get_table(__toascii(c)) & xdigit);
 }

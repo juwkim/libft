@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:49:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 09:49:35 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:46:58 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-int	ft_isupper(char c)
+bool	ft_isupper(char c)
 {
-	return ('A' <= c && c <= 'Z');
+	return (__get_table(__toascii(c)) & upper);
 }

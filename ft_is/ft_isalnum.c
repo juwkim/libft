@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:04:24 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 09:50:42 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:46:21 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-int	ft_isalnum(char c)
+bool	ft_isalnum(char c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (__get_table(__toascii(c)) & alnum);
 }

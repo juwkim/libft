@@ -6,18 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:37:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 11:57:53 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:58:03 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-char	*ft_memchr(char *s, char c, int n)
+char	*ft_memchr(char *s, char c)
 {
-	while (n-- && *s && *s != c)
+	while (*s)
+	{
+		if (*s == c)
+			return (s);
 		s++;
-	if (*s == c)
-		return (s);
-	else
-		return (NULL);
+	}
+	return (NULL);
 }

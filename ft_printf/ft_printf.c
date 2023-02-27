@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:17:58 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 03:13:10 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 15:02:06 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_printf(const char *fmt, ...)
 	if (fmt == NULL)
 		return (-1);
 	va_start(args, fmt);
-	printed = ft_vprintf(STDOUT, fmt, args);
+	printed = ft_vprintf(STDOUT_FILENO, fmt, args);
 	va_end(args);
 	return (printed);
 }

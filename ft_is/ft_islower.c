@@ -6,13 +6,13 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:50:13 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 09:51:14 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:46:45 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
 
-int	ft_islower(char c)
+bool	ft_islower(char c)
 {
-	return ('a' <= c && c <= 'z');
+	return (__get_table(__toascii(c)) & lower);
 }

@@ -6,21 +6,17 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/13 03:06:45 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 15:01:37 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 # include <stdarg.h>
 # include <unistd.h>
 
-# include "ft_math.h"
-# include "ft_string.h"
-
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
+# include "libft.h"
 
 typedef struct s_opt
 {
@@ -56,4 +52,4 @@ int		ft_vprintf(int fd, const char *fmt, va_list args);
 int		ft_fprintf(int fd, const char *fmt, ...);
 int		ft_printf(const char *format, ...);
 
-#endif
+#endif // FT_PRINTF_H
