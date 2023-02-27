@@ -37,13 +37,19 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Functions from `<ctype.h>` library
 
-* [`ft_isascii`](sources/ft_isascii.c)			- test for ASCII character.
-* [`ft_isalnum`](sources/ft_isalnum.c)			- alphanumeric character test.
-* [`ft_isalpha`](sources/ft_isalpha.c)			- alphabetic character test.
-* [`ft_isdigit`](sources/ft_isdigit.c)			- decimal-digit character test.
-* [`ft_isprint`](sources/ft_isprint.c)			- printing character test (space character inclusive).
-* [`ft_tolower`](sources/ft_tolower.c)			- upper case to lower case letter conversion.
-* [`ft_toupper`](sources/ft_toupper.c)			- lower case to upper case letter conversion.
+* [`ft_isupper`](ft_is/ft_isupper.c)			- UPPERCASE.
+* [`ft_islower`](ft_is/ft_islower.c)			- lowercase.
+* [`ft_isalpha`](ft_is/ft_isalpha.c)			- Alphabetic.
+* [`ft_isdigit`](ft_is/ft_isdigit.c)			- Numeric.
+* [`ft_isxdigit`](ft_is/ft_isxdigit.c)			- Hexadecimal numeric.
+* [`ft_isspace`](ft_is/ft_isspace.c)			- Whitespace.
+* [`ft_isprint`](ft_is/ft_isprint.c)			- Printing.
+* [`ft_isgraph`](ft_is/ft_isgraph.c)			- Graphical.
+* [`ft_isblank`](ft_is/ft_isblank.c)			- Blank (usually SPC and TAB).
+* [`ft_iscntrl`](ft_is/ft_iscntrl.c)			- Control character.
+* [`ft_ispunct`](ft_is/ft_ispunct.c)			- Punctuation.
+* [`ft_isalnum`](ft_is/ft_isalnum.c)			- Alphanumeric.
+* [`ft_isascii`](ft_is/ft_isascii.c)			- If C is a 7 bit value.
 
 ### Functions from `<stdlib.h>` library
 
