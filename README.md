@@ -37,22 +37,25 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Functions from `<ctype.h>` library
 
-* [`ft_isupper`](ft_is/ft_isupper.c)			- UPPERCASE.
-* [`ft_islower`](ft_is/ft_islower.c)			- lowercase.
-* [`ft_isalpha`](ft_is/ft_isalpha.c)			- Alphabetic.
-* [`ft_isdigit`](ft_is/ft_isdigit.c)			- Numeric.
-* [`ft_isxdigit`](ft_is/ft_isxdigit.c)			- Hexadecimal numeric.
-* [`ft_isspace`](ft_is/ft_isspace.c)			- Whitespace.
-* [`ft_isprint`](ft_is/ft_isprint.c)			- Printing.
-* [`ft_isgraph`](ft_is/ft_isgraph.c)			- Graphical.
-* [`ft_isblank`](ft_is/ft_isblank.c)			- Blank (usually SPC and TAB).
-* [`ft_iscntrl`](ft_is/ft_iscntrl.c)			- Control character.
-* [`ft_ispunct`](ft_is/ft_ispunct.c)			- Punctuation.
-* [`ft_isalnum`](ft_is/ft_isalnum.c)			- Alphanumeric.
-* [`ft_isascii`](ft_is/ft_isascii.c)			- If C is a 7 bit value.
+* [`ft_isupper`](ft_ctype/ft_isupper.c)			- UPPERCASE.
+* [`ft_islower`](ft_ctype/ft_islower.c)			- lowercase.
+* [`ft_isalpha`](ft_ctype/ft_isalpha.c)			- Alphabetic.
+* [`ft_isdigit`](ft_ctype/ft_isdigit.c)			- Numeric.
+* [`ft_isxdigit`](ft_ctype/ft_isxdigit.c)		- Hexadecimal numeric.
+* [`ft_isspace`](ft_ctype/ft_isspace.c)			- Whitespace.
+* [`ft_isprint`](ft_ctype/ft_isprint.c)			- Printing.
+* [`ft_isgraph`](ft_ctype/ft_isgraph.c)			- Graphical.
+* [`ft_isblank`](ft_ctype/ft_isblank.c)			- Blank (usually SPC and TAB).
+* [`ft_iscntrl`](ft_ctype/ft_iscntrl.c)			- Control character.
+* [`ft_ispunct`](ft_ctype/ft_ispunct.c)			- Punctuation.
+* [`ft_isalnum`](ft_ctype/ft_isalnum.c)			- Alphanumeric.
+* [`ft_isascii`](ft_ctype/ft_isascii.c)			- If C is a 7 bit value.
+* [`ft_toupper`](ft_ctype/ft_toupper.c)			- lower case to upper case letter conversion.
+* [`ft_tolower`](ft_ctype/ft_tolower.c)			- upper case to lower case letter conversion.
 
 ### Functions from `<stdlib.h>` library
 
+* [`ft_abs`](ft_stdlib/ft_abs.c)			- convert ASCII string to integer.
 * [`ft_atoi`](sources/ft_atoi.c)		- convert ASCII string to integer.
 * [`ft_calloc`](sources/ft_calloc.c)	- memory allocation.
 
