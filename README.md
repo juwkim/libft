@@ -35,41 +35,52 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ## List of functions:
 
-### Functions from `<ctype.h>` library
+### Functions from `<ft_ctype.h>` library
 
-* [`ft_isupper`](ft_ctype/ft_isupper.c)			- UPPERCASE.
-* [`ft_islower`](ft_ctype/ft_islower.c)			- lowercase.
-* [`ft_isalpha`](ft_ctype/ft_isalpha.c)			- Alphabetic.
-* [`ft_isdigit`](ft_ctype/ft_isdigit.c)			- Numeric.
-* [`ft_isxdigit`](ft_ctype/ft_isxdigit.c)		- Hexadecimal numeric.
-* [`ft_isspace`](ft_ctype/ft_isspace.c)			- Whitespace.
-* [`ft_isprint`](ft_ctype/ft_isprint.c)			- Printing.
-* [`ft_isgraph`](ft_ctype/ft_isgraph.c)			- Graphical.
-* [`ft_isblank`](ft_ctype/ft_isblank.c)			- Blank (usually SPC and TAB).
-* [`ft_iscntrl`](ft_ctype/ft_iscntrl.c)			- Control character.
-* [`ft_ispunct`](ft_ctype/ft_ispunct.c)			- Punctuation.
-* [`ft_isalnum`](ft_ctype/ft_isalnum.c)			- Alphanumeric.
-* [`ft_isascii`](ft_ctype/ft_isascii.c)			- If C is a 7 bit value.
-* [`ft_toupper`](ft_ctype/ft_toupper.c)			- lower case to upper case letter conversion.
-* [`ft_tolower`](ft_ctype/ft_tolower.c)			- upper case to lower case letter conversion.
+* [`ft_isupper`](ft_ctype/ft_isupper.c)			- Checks for an uppercase character.
+* [`ft_islower`](ft_ctype/ft_islower.c)			- Checks for a lowercase character.
+* [`ft_isalpha`](ft_ctype/ft_isalpha.c)			- Checks for an alphabetic character. It is equivalent to (isupper(c) || islower(c)).
+* [`ft_isdigit`](ft_ctype/ft_isdigit.c)			- Checks for a digit (0 through 9).
+* [`ft_isxdigit`](ft_ctype/ft_isxdigit.c)		- Checks for hexadecimal digits. That is, one of 0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F.
+* [`ft_isspace`](ft_ctype/ft_isspace.c)			- Checks for white-space characters.
+* [`ft_isprint`](ft_ctype/ft_isprint.c)			- Checks for any printable character including space.
+* [`ft_isgraph`](ft_ctype/ft_isgraph.c)			- Checks for any printable character except space. 
+* [`ft_isblank`](ft_ctype/ft_isblank.c)			- Checks for a blank character. That is, a space or a tab.
+* [`ft_iscntrl`](ft_ctype/ft_iscntrl.c)			- Checks for a control character.
+* [`ft_ispunct`](ft_ctype/ft_ispunct.c)			- Checks for a character is a punctuation. All punctuations in c: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~.
+* [`ft_isalnum`](ft_ctype/ft_isalnum.c)			- Checks for an alphanumeric character. It is equivalent to (isalpha(c) || isdigit(c)).
+* [`ft_isascii`](ft_ctype/ft_isascii.c)			- Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+* [`ft_toupper`](ft_ctype/ft_toupper.c)			- Lower case to upper case character conversion.
+* [`ft_tolower`](ft_ctype/ft_tolower.c)			- Upper case to lower case character conversion.
 
-### Functions from `<stdlib.h>` library
+### Functions from `<ft_math.h>` library
 
-* [`ft_abs`](ft_stdlib/ft_abs.c)			- convert ASCII string to integer.
-* [`ft_atoi`](sources/ft_atoi.c)		- convert ASCII string to integer.
-* [`ft_calloc`](sources/ft_calloc.c)	- memory allocation.
+* [`ft_min`](ft_math/ft_min.c)				- Returns the smaller.
+* [`ft_max`](ft_math/ft_max.c)				- Returns the larger.
+* [`ft_median`](ft_math/ft_median.c)			- Return the middle of the three.
+* [`ft_swap`](ft_math/ft_swap.c)			- Swap values of a and b.
 
-### Functions from `<strings.h>` library
+### Functions from `<ft_stdio.h>` library
 
-* [`ft_bzero`](sources/ft_bzero.c)		- write zeroes to a byte string.
+* [`ft_printf`](ft_stdio/ft_printf.c)			- Write formatted output to stdout.
+* [`ft_dprintf`](ft_stdio/ft_dprintf.c)			- Write formatted output to file.
+* [`ft_sprintf`](ft_stdio/ft_sprintf.c)			- Write formatted output to string.
+* [`ft_get_next_line`](ft_stdio/ft_get_next_line.c)	- Read a next line from a file.
+
+### Functions from `<ft_stdlib.h>` library
+
+* [`ft_abs`](ft_stdlib/ft_abs.c)			- Returns the absolute value.
+* [`ft_atoi`](ft_stdlib/ft_atoi.c)			- Converts the initial portion of the string to int.
+* [`ft_itoa`](ft_stdlib/ft_itoa.c)			- Converts an integer to ASCII string.
+* [`ft_calloc`](ft_stdlib/ft_calloc.c)			- Allocates memory set to zero.
+
+### Functions from `<ft_string.h>` library
+
 * [`ft_memset`](sources/ft_memset.c)		- write a byte to a byte string.
 * [`ft_memchr`](sources/ft_memchr.c)		- locate byte in byte string.
 * [`ft_memcmp`](sources/ft_memcmp.c)		- compare byte string.
 * [`ft_memmove`](sources/ft_memmove.c)	- copy byte string.
 * [`ft_memcpy`](sources/ft_memcpy.c)		- copy memory area.
-
-### Functions from `<string.h>` library
-
 * [`ft_strlen`](sources/ft_strlen.c)				- find length of string.
 * [`ft_strchr`](sources/ft_strchr.c)				- locate character in string (first occurrence).
 * [`ft_strrchr`](sources/ft_strrchr.c)			- locate character in string (last occurence).
@@ -78,33 +89,13 @@ For more detailed information, look at the [**subject of this project**](https:/
 * [`ft_strdup`](sources/ft_strdup.c)				- save a copy of a string (with malloc).
 * [`ft_strlcpy`](sources/ft_strlcpy.c)			- size-bounded string copying.
 * [`ft_strlcat`](sources/ft_strlcat.c)			- size-bounded string concatenation.
-
-### Non-standard functions
-
-* [`ft_itoa`](sources/ft_itoa.c)					- convert integer to ASCII string.
-* [`ft_substr`](sources/ft_substr.c)				- extract substring from string.
 * [`ft_strtrim`](sources/ft_strtrim.c)			- trim beginning and end of string with the specified characters.
 * [`ft_strjoin`](sources/ft_strjoin.c)			- concatenate two strings into a new string (with malloc).
 * [`ft_split`](sources/ft_split.c)				- split string, with specified character as delimiter, into an array of strings.
-* [`ft_strmapi`](sources/ft_strmapi.c)			- create new string from modifying string with specified function.
-* [`ft_striteri`](sources/ft_striteri.c)			- 
-* [`ft_putchar_fd`](sources/ft_putchar_fd.c)		- output a character to given file.
-* [`ft_putstr_fd`](sources/ft_putstr_fd.c)		- output string to given file.
-* [`ft_putendl_fd`](sources/ft_putendl_fd.c)		- output string to given file with newline.
-* [`ft_putnbr_fd`](sources/ft_putnbr_fd.c)		- output integer to given file.
 
-### Linked list functions (bonus)
+### Functions from `<ft_strings.h>` library
 
-* [`ft_lstnew`](sources/ft_lstnew.c)				- create new list.
-* [`ft_lstsize`](sources/ft_lstsize.c)			- count elements of a list.
-* [`ft_lstlast`](sources/ft_lstlast.c)			- find last element of list.
-* [`ft_lstadd_back`](sources/ft_lstadd_back.c)	- add new element at end of list.
-* [`ft_lstadd_front`](sources/ft_lstadd_front.c)	- add new element at beginning of list.
-* [`ft_lstdelone`](sources/ft_lstdelone.c)		- delete element from list.
-* [`ft_lstclear`](sources/ft_lstclear.c)			- delete sequence of elements of list from a starting point.
-* [`ft_lstiter`](sources/ft_lstiter.c)			- apply function to content of all list's elements.
-* [`ft_lstmap`](sources/ft_lstmap.c)				- apply function to content of all list's elements into new list.
-
+* [`ft_bzero`](ft_strings/ft_bzero.c)			- Write zeroes to a byte string.
 
 ## 🛠️ Usage
 
