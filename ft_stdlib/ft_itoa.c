@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:00:40 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 02:08:02 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief 
- * Converts an integer to a string.
+ * Converts an integer to ASCII string.
  * @param buf 
  * @param num 
  * @param base 

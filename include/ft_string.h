@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:14:08 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 02:16:27 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,25 @@ int		ft_memcmp(const void *mem1, const void *mem2, size_t n);
 void	ft_memcpy(void *const dest, const void *const begin, \
 											const void *const end);
 
+int		ft_strlen(const char *str);
+
+char	*ft_strchr(const char *str, const char c);
+char	*ft_strrchr(const char *str, const char c);
+
+char	*ft_strstr(const char *haystack, const char *needle);
+
 int		ft_strcmp(const char *str1, const char *str2);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 
 void	ft_strcat(char *dest, const char *src);
 void	ft_strncat(char *dest, const char *src, size_t n);
 
-char	*ft_strchr(const char *str, const char c);
-char	*ft_strrchr(const char *str, const char c);
-
 void	ft_strcpy(char *dest, const char *src);
-
-int		ft_strlen(const char *str);
 
 char	*ft_strdup(const char *begin, const char *end);
 
 void	ft_strrev(char *begin, char *end);
-char	*ft_strstr(const char *haystack, const char *needle);
+
 char	*ft_strtok(char *str, char delim);
 char	*ft_strtrim(const char *str, const char *set);
 

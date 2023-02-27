@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:49:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:32:11 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 01:39:59 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief 
- * checks for an uppercase letter.
+ * checks for an uppercase character.
  */
 bool	ft_isupper(char c)
 {

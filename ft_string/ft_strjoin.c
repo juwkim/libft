@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:25:24 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 02:23:47 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /**
  * @brief
- * Join the str1 and str2.
+ * Concatenate two strings into a new string.
  * @param str1 
  * @param str2 
  * @return
- * Returns the joined string. 
+ * Returns str1 + str2
  */
 char	*ft_strjoin(const char *str1, const char *str2)
 {

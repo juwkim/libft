@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:25:46 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/28 02:24:04 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 /**
  * @brief
+ * Concatenate two strings with c between them.
  * @param str1 
  * @param str2 
  * @param c 
  * @return
- * Returns a string joined with one character c between str1 and str2.
+ * Returns str1 + c + str2
  */
 char	*ft_strcjoin(const char *str1, const char *str2, char c)
 {
