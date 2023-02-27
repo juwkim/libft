@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:54:23 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 23:52:40 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn)
 {
 	char	*newline;
 	char	*temp;
-
 
 	buf[read_size] = '\0';
 	newline = ft_strchr(buf, '\n');
