@@ -6,18 +6,18 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:53:13 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/12 08:39:52 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 20:37:59 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *str1, const char *str2)
 {
-	while (*s1 && *s1 == *s2)
+	while (*str1 && *str1 == *str2)
 	{
-		++s1;
-		++s2;
+		++str1;
+		++str2;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (*(unsigned char *)str1 - *(unsigned char *)str2);
 }

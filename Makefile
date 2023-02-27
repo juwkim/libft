@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/02/27 15:04:32 by juwkim           ###   ########.fr        #
+#    Updated: 2023/02/27 20:46:09 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ endif
 
 # Define the directories
 
-SRC_DIR				:=	ft_is ft_math ft_memory ft_printf ft_string
+SRC_DIR				:=	ft_ctype ft_math ft_stdio ft_stdlib ft_string ft_strings
 OBJ_DIR				:=	object
 INC_DIR				:=	include
 

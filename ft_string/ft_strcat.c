@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 20:19:18 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 20:36:30 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *str, const char c)
+void	ft_strcat(char *dest, const char *src)
 {
-	const char	*ptr;
-
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	ft_memcpy(dest + ft_strlen(dest), src, src + ft_strlen(src));
 }

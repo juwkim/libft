@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   __utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2022/10/12 05:18:07 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 22:41:59 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_stdio.h"
 
-char	*ft_strrchr(const char *str, const char c)
+int	__skip_atoi(const char **s)
 {
-	const char	*ptr;
+	int	num;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	num = 0;
+	while (ft_isdigit(**s) == true)
+		num = num * 10 + *((*s)++) - '0';
+	return (num);
 }

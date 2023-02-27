@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2022/08/29 04:41:23 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 22:56:09 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *str, const char c)
+void	ft_memcpy(void *const dest, const void *const begin, \
+											const void *const end)
 {
-	const char	*ptr;
+	unsigned char		*dest_ptr;
+	unsigned char		*src_ptr;
+	const unsigned char	*end_ptr = end;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	assert(dest != NULL && begin != NULL && end != NULL);
+	dest_ptr = (unsigned char *) dest;
+	src_ptr = (unsigned char *) begin;
+	while (src_ptr < end_ptr)
+		*dest_ptr++ = *src_ptr++;
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2023/01/13 02:47:23 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 20:04:56 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *str, const char c)
+void	ft_strrev(char *begin, char *end)
 {
-	const char	*ptr;
+	char	tmp;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	while (begin < end)
+	{
+		tmp = *begin;
+		*begin = *end;
+		*end = tmp;
+		++begin;
+		--end;
+	}
 }

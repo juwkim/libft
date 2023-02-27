@@ -6,22 +6,23 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:56:31 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 12:10:04 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 23:00:23 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strtrim(char *s1, char *set)
+char	*ft_strtrim(const char *str, const char *set)
 {
-	size_t	len;
+	const char	*begin;
+	const char	*end;
 
-	if (!s1 || !set)
-		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	len = ft_strlen(s1);
-	while (len && ft_strchr(set, s1[len]))
-		len--;
-	return (ft_substr(s1, 0, len + 1));
+	assert(str != NULL && set != NULL);
+	begin = str;
+	while (*begin && ft_strchr(set, *begin) != NULL)
+		++begin;
+	end = str + ft_strlen(str) - 1;
+	while (end > begin && ft_strchr(set, *end) != NULL)
+		--end;
+	return (ft_strdup(begin, end + 1));
 }

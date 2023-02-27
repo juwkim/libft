@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   __toascii.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 14:42:44 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 15:41:20 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_ctype.h"
 
-char	*ft_strrchr(const char *str, const char c)
+unsigned char	__toascii(char c)
 {
-	const char	*ptr;
+	const unsigned char	d = c;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	return (d & 0x7f);
 }

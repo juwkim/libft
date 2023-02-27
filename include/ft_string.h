@@ -6,53 +6,44 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 14:54:12 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 22:54:52 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
+# include <assert.h>
 
-# include "ft_is.h"
-# include "ft_memory.h"
+# include "libft.h"
 
-char	*get_next_line(int fd);
+void	ft_memset(const void *mem, const unsigned char c, size_t n);
+int		ft_memcmp(const void *mem1, const void *mem2, size_t n);
+void	ft_memcpy(void *const dest, const void *const begin, \
+											const void *const end);
 
-char	**ft_split(char const *s, char c);
-void	ft_free_array(char	**array, int n);
+int		ft_strcmp(const char *str1, const char *str2);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 
-char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_strcjoin(const char *s1, const char *s2, char c);
+void	ft_strcat(char *dest, const char *src);
+void	ft_strncat(char *dest, const char *src, size_t n);
 
-char	*ft_strdup(const char *s);
-char	*ft_strndup(const char *s, size_t n);
+char	*ft_strchr(const char *str, const char c);
+char	*ft_strrchr(const char *str, const char c);
 
-int		ft_strlcat(char *dest, const char *src, size_t size);
-int		ft_strlcpy(char *dest, const char *src, size_t size);
+int		ft_strlen(const char *str);
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strdup(const char *begin, const char *end);
 
-int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strnstr(const char *str, const char *to_find, int n);
+void	ft_strrev(char *begin, char *end);
+char	*ft_strstr(const char *haystack, const char *needle);
+char	*ft_strtok(char *str, char delim);
+char	*ft_strtrim(const char *str, const char *set);
 
-int		ft_strfind(const char *str, char c);
-char	*ft_strchr(char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strjoin(const char *str1, const char *str2);
+char	*ft_strcjoin(const char *str1, const char *str2, char c);
 
-char	*ft_strtrim(char *s1, char *set);
-void	ft_strreverse(char *begin, char *end);
-
-char	*ft_substr(char const *s, int start, int len);
-
-int		ft_strlen(const char *s);
-
-int		ft_tolower(int c);
-int		ft_toupper(int c);
+char	**ft_split(char const *s, const char delim);
 
 #endif // FT_STRING_H

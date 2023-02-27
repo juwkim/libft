@@ -5,36 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:50:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/04 03:24:11 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 17:39:40 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 22:58:54 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *begin, const char *end)
 {
-	char	*buf;
-	size_t	len;
+	char		*copy;
+	const int	size = end - begin;
 
-	if (s == NULL)
-		len = 0;
-	else
-		len = ft_strlen(s);
-	buf = (char *) malloc(sizeof(char) * (len + 1));
-	if (buf == NULL)
+	if (begin == NULL || end == NULL || size < 0)
 		return (NULL);
-	ft_strlcpy(buf, s, len + 1);
-	return (buf);
-}
-
-char	*ft_strndup(const char *s, size_t n)
-{
-	char			*buf;
-
-	buf = (char *) malloc(sizeof(char) * (n + 1));
-	if (buf == NULL)
+	copy = malloc(sizeof(char) * (size + 1));
+	assert(copy != NULL);
+	if (copy == NULL)
 		return (NULL);
-	ft_strlcpy(buf, s, n + 1);
-	return (buf);
+	ft_memcpy(copy, begin, end);
+	copy[size] = '\0';
+	return (copy);
 }

@@ -6,18 +6,18 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:52:42 by juwkim            #+#    #+#             */
-/*   Updated: 2023/01/09 12:10:01 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 20:21:47 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen(const char *str)
 {
-	int	len;
+	const char	*ptr = str;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	assert(str != NULL);
+	while (*ptr != '\0')
+		++ptr;
+	return (ptr - str);
 }

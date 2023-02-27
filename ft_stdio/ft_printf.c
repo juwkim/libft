@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2022/10/12 05:17:58 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 23:06:21 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_stdio.h"
 
-char	*ft_strrchr(const char *str, const char c)
+int	ft_printf(const char *fmt, ...)
 {
-	const char	*ptr;
+	va_list	args;
+	int		printed;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	if (fmt == NULL)
+		return (-1);
+	va_start(args, fmt);
+	printed = __vprintf(__get_vprintf_out_func(STDOUT_FILENO, NULL), fmt, args);
+	va_end(args);
+	return (printed);
 }

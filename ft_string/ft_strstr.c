@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2022/08/29 04:53:25 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 23:01:07 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *str, const char c)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	const char	*ptr;
+	const int	needle_len = ft_strlen(needle);
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	assert(haystack != NULL && needle != NULL && needle_len > 0);
+	while (*haystack)
+	{
+		if (ft_memcmp(haystack, needle, needle_len) == 0)
+			return ((char *) haystack);
+		++haystack;
+	}
+	return (NULL);
 }

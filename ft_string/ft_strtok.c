@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:54:33 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:59:46 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 19:38:36 by juwkim            #+#    #+#             */
+/*   Updated: 2023/02/27 20:09:30 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *str, const char c)
+char	*ft_strtok(char *str, char delim)
 {
-	const char	*ptr;
+	static char	*input;
+	char		*res;
+	int			idx;
 
-	assert(str != NULL);
-	ptr = str + ft_strlen(str) - 1;
-	while (ptr > str && *ptr != c)
-		--ptr;
-	return ((char *) ptr);
+	if (str != NULL)
+		input = str;
+	if (input == NULL)
+		return (NULL);
+	res = malloc(ft_strlen(input) + 1);
+	assert(res != NULL);
+	idx = 0;
+	while (input[idx] != '\0' && input[idx] != delim)
+	{
+		res[idx] = input[idx];
+		++idx;
+	}
+	res[idx] = '\0';
+	if (input[idx] == '\0')
+		input = NULL;
+	else
+		input += idx + 1;
+	return (res);
 }

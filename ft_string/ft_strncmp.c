@@ -6,20 +6,19 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:53:13 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/12 08:44:36 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 20:37:57 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (n == 0)
-		return (0);
-	while (--n && *s1 && *s1 == *s2)
+	assert(n != 0);
+	while (--n && *str1 && *str1 == *str2)
 	{
-		++s1;
-		++s2;
+		++str1;
+		++str2;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (*(unsigned char *)str1 - *(unsigned char *)str2);
 }

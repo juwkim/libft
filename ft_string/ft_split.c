@@ -6,61 +6,48 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:47:14 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/12 12:27:06 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/02/27 22:58:02 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-int	ft_count_words(char const *s, char c)
+static int	__count_words(char const *s, char c);
+
+char	**ft_split(char const *s, const char delim)
+{
+	int				idx;
+	const char		*begin;
+	char **const	buf = (char **) \
+					malloc(sizeof(char *) * (__count_words(s, delim) + 1));
+
+	assert(buf != NULL);
+	idx = 0;
+	while (*s != '\0')
+	{
+		if (*s == delim)
+		{
+			++s;
+			continue ;
+		}
+		begin = s;
+		while (*s != '\0' && *s != delim)
+			++s;
+		buf[++idx] = ft_strdup(begin, s);
+	}
+	buf[idx] = NULL;
+	return (buf);
+}
+
+static int	__count_words(const char *s, char c)
 {
 	int	cnt;
 
 	cnt = 0;
-	while (*s)
+	while (*s != '\0')
 	{
-		if (*s != c && (*(s + 1) == '\0' || *(s + 1) == c))
-			cnt++;
-		s++;
+		cnt += (*s != c && (*(s + 1) == '\0' || *(s + 1) == c));
+		++s;
 	}
 	return (cnt);
-}
-
-char	**ft_free_dptr(char	**s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != NULL)
-		free(s[i++]);
-	free(s);
-	return (NULL);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		words_idx;
-	char	*word_tmp;
-	char	**buf;
-
-	buf = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (buf == NULL)
-		return (NULL);
-	words_idx = 0;
-	while (*s)
-	{
-		if (*s == c)
-			s++;
-		else
-		{
-			word_tmp = (char *)s;
-			while (*s && *s != c)
-				s++;
-			buf[words_idx] = ft_substr(word_tmp, 0, s - word_tmp);
-			if (!buf[words_idx++])
-				return (ft_free_dptr(buf));
-		}
-	}
-	buf[words_idx] = NULL;
-	return (buf);
 }
