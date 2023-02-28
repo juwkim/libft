@@ -24,8 +24,7 @@ char	*ft_strdup(const char *begin, const char *end)
 	char		*copy;
 	const int	size = end - begin;
 
-	if (begin == NULL || end == NULL || size < 0)
-		return (NULL);
+	assert(begin != NULL && end != NULL && size >= 0);
 	copy = malloc(sizeof(char) * (size + 1));
 	assert(copy != NULL);
 	ft_memcpy(copy, begin, end);
