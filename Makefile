@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/03/01 01:02:56 by juwkim           ###   ########.fr        #
+#    Updated: 2023/03/01 01:22:10 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,11 +58,11 @@ NAME                :=	libft.a
 all:
 	@$(MAKE) -j $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
 	@printf "\n$(MAGENTA)[LIBFT] Make Success\n$(DEF_COLOR)"
 
-$(OBJ_DIR)/%.o : %.c | dir_guard
+$(OBJ_DIR)/%.o: %.c | dir_guard
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
 	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
