@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/03/01 00:38:41 by juwkim           ###   ########.fr        #
+#    Updated: 2023/03/01 01:02:56 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@
 
 CC                  :=	cc
 CFLAGS              :=	-Wall -Wextra -Werror -march=native -O2 -pipe
+CPPFLAGS			:=	-I include
 ARFLAGS             := 	-rcs
 
 ifdef DEBUG
@@ -28,7 +29,6 @@ endif
 
 SRC_DIR             :=	ft_ctype ft_math ft_stdio ft_stdlib ft_string ft_strings
 OBJ_DIR             :=	object
-INC_DIR             :=	include
 
 # ---------------------------------------------------------------------------- #
 #   Define the source files                                                    #
@@ -41,7 +41,7 @@ OBJS                :=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 #   Define the variables for progress bar                                      #
 # ---------------------------------------------------------------------------- #
 
-TOTAL_FILES         :=	$(shell find . -type f -name *.c | wc -l)
+TOTAL_FILES         :=	$(shell echo $(SRCS) | wc -w)
 COMPILED_FILES      :=	0
 STEP                :=	100
 
@@ -63,7 +63,7 @@ $(NAME) : $(OBJS)
 	@printf "\n$(MAGENTA)[LIBFT] Make Success\n$(DEF_COLOR)"
 
 $(OBJ_DIR)/%.o : %.c | dir_guard
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
 	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
 	@printf "                                                                                                   \r"
