@@ -105,27 +105,33 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Requirements
 
-The library is written in C language and thus needs the **`c` compiler** and some standard **C libraries** to run.
+The library is written in C language and thus needs the **C compiler** and some standard **C libraries** to run.
 
 ### Instructions
 
-**1. Compiling the library**
+- Pull files ↙️
+```
+$ git clone https://github.com/juwkim/libft
+```
 
-To compile the library, go to its path and run:
-
-```shell
+- To make libft ↙️
+```
 $ make
 ```
 
-**2. Cleaning all object files (.o) and executable files (.a)**
+- To clean all object files (.o) and library file (.a) ↙️
 
-```shell
+```
 $ make fclean
 ```
 
-**3. Using it in your code**
+- To check this repository complies with [norminette](https://github.com/42School/norminette) ↙️
 
-To use the library functions in your code, simply include its header:
+```
+$ make norm
+```
+
+- To use libft in your code ↙️
 
 ```C
 #include "libft.h"
