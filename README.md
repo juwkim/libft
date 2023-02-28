@@ -110,24 +110,24 @@ The library is written in C language and thus needs the **C compiler** and some 
 ### Instructions
 
 - Pull files ↙️
-```
+```shell
 $ git clone https://github.com/juwkim/libft
 ```
 
 - To make libft ↙️
-```
+```shell
 $ make
 ```
 
 - To clean all object files (.o) and library file (.a) ↙️
 
-```
+```shell
 $ make fclean
 ```
 
 - To check this repository complies with [norminette](https://github.com/42School/norminette) ↙️
 
-```
+```shell
 $ make norm
 ```
 
