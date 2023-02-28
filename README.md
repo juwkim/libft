@@ -24,12 +24,14 @@
 
 ## 💡 About the project
 
-> _The aim of this project is to code a C library regrouping usual functions that you'll be allowed to use in all your other projects._
+> _This project is about coding a C library. It will contain a lot of general purpose functions your programs will rely upon._
 
-	Programming in C can be very tedious when you don't have access to the very useful standard functions.
-	This project gives you the opportunity to rewrite those functions to understand them and learn to use them.
-	The library will help you for your future projects in C. Through this project, you have the opportunity
-	to extend your list of functions in your own way!
+	C Programming can be very tedious when one doesn't have access to the highly useful standard functions.
+	This project is about understanding the way these functions work, implementing and learning to use them.
+	You will create your own library. It will be helpful since you will use it in your next C school assignments.
+	
+	Take the time to expand your `libft` throughout the year. However, when working on a new project, don't forget to
+	ensure the functions used in your library are allowed in the project guidelines.
 
 For more detailed information, look at the [**subject of this project**](https://github.com/juwkim/42cursus/blob/main/Subject%20PDFs/00_libft.pdf).
 
