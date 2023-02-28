@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/03/01 00:36:17 by juwkim           ###   ########.fr        #
+#    Updated: 2023/03/01 00:38:41 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ norm:
 	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT] Norminette Success\n$(DEF_COLOR)")
 
 debug:
+	@$(MAKE) fclean
 	@$(MAKE) DEBUG=1 all
 	
 .PHONY:	all clean fclean re dir_guard norm debug
