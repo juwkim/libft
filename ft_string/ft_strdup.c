@@ -28,8 +28,6 @@ char	*ft_strdup(const char *begin, const char *end)
 		return (NULL);
 	copy = malloc(sizeof(char) * (size + 1));
 	assert(copy != NULL);
-	if (copy == NULL)
-		return (NULL);
 	ft_memcpy(copy, begin, end);
 	copy[size] = '\0';
 	return (copy);
