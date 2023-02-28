@@ -105,7 +105,7 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Requirements
 
-The library is written in C language and needs the **`c` compiler** and some standard **C libraries** to run.
+The library is written in C language and thus needs the **`c` compiler** and some standard **C libraries** to run.
 
 ### Instructions
 
