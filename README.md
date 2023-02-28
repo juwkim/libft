@@ -114,7 +114,7 @@ The library is written in C language and thus needs the **C compiler** and some 
 $ git clone https://github.com/juwkim/libft
 ```
 
-- To build ↙️
+- To build libft ↙️
 ```shell
 $ make
 ```
