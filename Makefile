@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:18:16 by juwkim            #+#    #+#              #
-#    Updated: 2023/02/27 23:50:31 by juwkim           ###   ########.fr        #
+#    Updated: 2023/03/01 00:36:17 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@
 CC                  :=	cc
 CFLAGS              :=	-Wall -Wextra -Werror -march=native -O2 -pipe
 ARFLAGS             := 	-rcs
+
+ifdef DEBUG
+	CFLAGS	+= -g -fsanitize=address,leak,undefined
+endif
 
 # ---------------------------------------------------------------------------- #
 #   Define the directories                                                     #
@@ -59,7 +63,7 @@ $(NAME) : $(OBJS)
 	@printf "\n$(MAGENTA)[LIBFT] Make Success\n$(DEF_COLOR)"
 
 $(OBJ_DIR)/%.o : %.c | dir_guard
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $^ -o $@
 	$(eval COMPILED_FILES = $(shell expr $(COMPILED_FILES) + 1))
 	$(eval PROGRESS = $(shell expr $(COMPILED_FILES) "*" $(STEP) / $(TOTAL_FILES)))
 	@printf "                                                                                                   \r"
@@ -67,7 +71,7 @@ $(OBJ_DIR)/%.o : %.c | dir_guard
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@printf "$(BLUE)[LIBFT] obj. dep. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
+	@printf "$(BLUE)[LIBFT] obj. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 fclean: clean
 	@$(RM) $(NAME)
@@ -84,8 +88,7 @@ norm:
 	@(norminette | grep Error) || (printf "$(GREEN)[LIBFT] Norminette Success\n$(DEF_COLOR)")
 
 debug:
-	$(CFLAGS) += -fsanitize=leak -fsanitize=address
-	@$(MAKE) all
+	@$(MAKE) DEBUG=1 all
 	
 .PHONY:	all clean fclean re dir_guard norm debug
 
