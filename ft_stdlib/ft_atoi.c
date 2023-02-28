@@ -38,7 +38,7 @@ int	ft_atoi(const char *nptr)
 		else
 			dnum = - (*nptr++ - '0');
 		assert(__is_mul_overflow(num, 10) == false);
-		assert(__is_add_overflow(num, 10) == false);
+		assert(__is_add_overflow(num * 10, dnum) == false);
 		num = num * 10 + dnum;
 	}
 	assert(*nptr == '\0');
