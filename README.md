@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-	<b><i>YOUR VERY FIRST OWN LIBRARY</i></b><br>
+	<b><i>Your very first own library</i></b><br>
 </p>
 
 <p align="center">
