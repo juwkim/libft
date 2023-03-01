@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:47:14 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 02:25:22 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 18:17:21 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static int	__count_words(char const *s, char c);
  * @param delim 
  * @return Return an array of splited strings.
  */
-char	**ft_split(char const *s, const char delim)
+char	**ft_split(const char *s, const char delim)
 {
 	int				idx;
 	const char		*begin;
-	char **const	buf = (char **) \
+	char **const	buf = (char **const) \
 					malloc(sizeof(char *) * (__count_words(s, delim) + 1));
 
 	assert(buf != NULL);
@@ -40,7 +40,7 @@ char	**ft_split(char const *s, const char delim)
 		begin = s;
 		while (*s != '\0' && *s != delim)
 			++s;
-		buf[++idx] = ft_strdup(begin, s);
+		buf[idx++] = ft_strdup(begin, s);
 	}
 	buf[idx] = NULL;
 	return (buf);

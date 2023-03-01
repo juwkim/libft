@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:41:23 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 20:22:38 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int		__dprintf_out(const char *str, int len);
 int		ft_sprintf(char *buf, const char *fmt, ...);
 void	__set_buf(char *buf);
 int		__sprintf_out(const char *str, int len);
+
+/* ft_get_next_line.c */
+char	*ft_get_next_line(int fd);
 
 /* vprintf.c */
 int		__vprintf(int (*out)(const char *str, int len), \

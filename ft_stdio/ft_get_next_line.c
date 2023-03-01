@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:53:57 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 21:26:53 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn);
  * A file descriptor that's associated with the file.
  * @return char* 
  */
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	static char	*rest;
 	char		*line;
@@ -44,12 +44,20 @@ static bool	check_rest(char **rest, char **line)
 	char				*temp;
 	const char *const	newline = ft_strchr(*rest, '\n');
 
-	if (newline == NULL)
+	if (*newline == '\0')
 		return (false);
 	*line = ft_strdup(*rest, newline);
-	temp = ft_strdup(newline + 1, *rest + ft_strlen(*rest));
-	free(*rest);
-	*rest = temp;
+	if (*(newline + 1) == '\0')
+	{
+		free(*rest);
+		*rest = NULL;
+	}
+	else
+	{
+		temp = ft_strdup(newline + 1, *rest + ft_strlen(*rest));
+		free(*rest);
+		*rest = temp;
+	}
 	return (true);
 }
 
@@ -66,7 +74,7 @@ static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn)
 		*newline = '\0';
 	}
 	if (*rtn == NULL)
-		*rtn = ft_strdup(buf, buf + read_size);
+		*rtn = ft_strdup(buf, newline);
 	else
 	{
 		temp = ft_strjoin(*rtn, buf);

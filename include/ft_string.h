@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 02:16:27 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 18:08:48 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ char	*ft_strtrim(const char *str, const char *set);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strcjoin(const char *str1, const char *str2, char c);
 
-char	**ft_split(char const *s, const char delim);
+char	**ft_split(const char *s, const char delim);
 
 #endif // FT_STRING_H
