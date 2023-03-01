@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 20:22:38 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 23:32:26 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		(*__get_vprintf_out_func(int fd, char *buf))(const char *str, int len);
 
 /* utils.c */
 int		__skip_atoi(const char **s);
+int		__itoa(char *buf, unsigned long num, int base, bool is_lower);
 
 /* set_option.c */
 void	__set_flags(const char **fmt, t_opt *opt);

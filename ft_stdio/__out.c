@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 06:31:19 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/27 22:54:01 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 23:32:47 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	__print_address(int (*out)(const char *str, int len), \
 {
 	int			printed;
 	char		buf[16];
-	const int	len = ft_itoa(buf, num, 16, 32);
+	const int	len = __itoa(buf, num, 16, 32);
 
 	printed = 0;
 	opt->width -= 2 + len;
@@ -71,7 +71,7 @@ int	__print_unsigned(int (*out)(const char *str, int len), \
 	char		i;
 	int			printed;
 	char		b[32];
-	const int	len = ft_itoa(b, num, 10 + 6 * (flag > 10), 32 * (flag > 16));
+	const int	len = __itoa(b, num, 10 + 6 * (flag > 10), 32 * (flag > 16));
 
 	printed = 0;
 	opt->width -= (num && opt->special) << 1;
@@ -104,7 +104,7 @@ int	__print_signed(int (*out)(const char *str, int len), long num, t_opt *opt)
 
 	printed = 0;
 	__set_sign(&num, opt);
-	len = ft_itoa(buf, num, 10, 0);
+	len = __itoa(buf, num, 10, 0);
 	opt->width -= ft_max(len, opt->prec) * (num || opt->dot == 0 || opt->prec);
 	if (opt->left == 0 && (opt->dot || opt->zeropad == 0))
 		while (opt->width-- > 0)

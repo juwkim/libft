@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 02:08:02 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 23:36:42 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,20 @@
  * Converts an integer to ASCII string.
  * @param buf 
  * @param num 
- * @param base 
- * @param lower 
- * @return Returns the length of the converted string.
+ * @param radix
  */
-int	ft_itoa(char *buf, unsigned long num, int base, int lower)
+void	ft_itoa(int value, char *string, int radix)
 {
 	static const char	digits[16] = "0123456789ABCDEF";
 	char				*ptr;
 
-	ptr = buf;
-	while (1)
+	ptr = string;
+	while (true)
 	{
-		*ptr++ = digits[num % base] | lower;
-		num /= base;
-		if (num == 0)
+		*ptr++ = digits[value % radix];
+		value /= radix;
+		if (value == 0)
 			break ;
 	}
-	ft_strrev(buf, ptr - 1);
-	return (ptr - buf);
+	ft_strrev(string, ptr - 1);
 }
