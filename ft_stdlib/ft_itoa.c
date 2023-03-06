@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 23:36:42 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/02 10:09:50 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
  * @param buf 
  * @param num 
  * @param radix
+ * @return
+ * return string
  */
-void	ft_itoa(int value, char *string, int radix)
+char	*ft_itoa(int value, char *string, int radix)
 {
 	static const char	digits[16] = "0123456789ABCDEF";
 	char				*ptr;
@@ -32,5 +34,7 @@ void	ft_itoa(int value, char *string, int radix)
 		if (value == 0)
 			break ;
 	}
+	*ptr = '\0';
 	ft_strrev(string, ptr - 1);
+	return (string);
 }

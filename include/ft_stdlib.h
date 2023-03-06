@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:17:32 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 23:37:06 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/02 10:10:02 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef enum s_sign
 
 int		ft_abs(int a);
 int		ft_atoi(const char *str);
-void	ft_itoa(int value, char *string, int radix);
+char	*ft_itoa(int value, char *string, int radix);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif // FT_STDLIB_H
