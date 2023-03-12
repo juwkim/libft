@@ -8,6 +8,7 @@
 
 <p align="center">
 	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/juwkim/libft?color=lightblue">
+	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/juwkim/libft?color=critical">
 	<img alt="Code language count" src="https://img.shields.io/github/languages/count/juwkim/libft?color=yellow">
 	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/juwkim/libft?color=blue">
 	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/juwkim/libft?color=green">
@@ -77,29 +78,31 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Functions from `<ft_string.h>` library
 
-* [`ft_memset`](ft_string/ft_memset.c)			- Fills the first n bytes of the memory area with the constant byte c.
 * [`ft_memcmp`](ft_string/ft_memcmp.c)			- Compares the first n bytes (each interpreted as unsigned char) of the memory areas.
 * [`ft_memcpy`](ft_string/ft_memcpy.c)			- Copies n bytes from memory area src to memory area dest. The memory areas must not overlap.
+* [`ft_memset`](ft_string/ft_memset.c)			- Fills the first n bytes of the memory area with the constant byte c.
 * [`ft_strlen`](ft_string/ft_strlen.c)			- Calculates the length of the string.
-* [`ft_strchr`](ft_string/ft_strchr.c)			- Find the first occurrence of the character c in the string.
-* [`ft_strrchr`](ft_string/ft_strrchr.c)		- Find the last occurrence of the character c in the string.
-* [`ft_strstr`](ft_string/ft_strstr.c)			- Finds the first occurrence of the substring needle in the string haystack.
-* [`ft_strcmp`](ft_string/ft_strcmp.c) 			- Compares the two strings.
-* [`ft_strncmp`](ft_string/ft_strncmp.c) 		- Compares the two strings at most n bytes.
 * [`ft_strcat`](ft_string/ft_strcat.c) 			- Appends the src string to the dest string.
 * [`ft_strncat`](ft_string/ft_strncat.c) 		- Appends the src string to the dest string at most n bytes.
-* [`ft_strcpy`](ft_string/ft_strcpy.c)			- Copies the string pointed to by src, including the terminating null byte ('\0'), to the buffer pointed to by dest. 
-* [`ft_strdup`](ft_string/ft_strdup.c)			- Copy the string from begin to end - 1.
-* [`ft_strrev`](ft_string/ft_strrev.c)			- Reverse the string from begin to end.
-* [`ft_strtok`](ft_string/ft_strtok.c)			- Breaks a string into a sequence of zero or more nonempty tokens.
-* [`ft_strtrim`](ft_string/ft_strtrim.c)		- Removes the space before and after of the string.
-* [`ft_strjoin`](ft_string/ft_strjoin.c)		- Concatenate two strings into a new string.
-* [`ft_strcjoin`](ft_string/ft_strcjoin.c)		- Concatenate two strings with c between them.
-* [`ft_split`](ft_string/ft_split.c)			- Split string with delimiter into an array of strings.
+* [`ft_strchr`](ft_string/ft_strchr.c)			- Find the first occurrence of the character c in the string.
+* [`ft_strrchr`](ft_string/ft_strrchr.c)		- Find the last occurrence of the character c in the string.
+* [`ft_strcmp`](ft_string/ft_strcmp.c) 			- Compares the two strings.
+* [`ft_strncmp`](ft_string/ft_strncmp.c) 		- Compares the two strings at most n bytes.
+* [`ft_strcpy`](ft_string/ft_strcpy.c)			- Copies the string pointed to by src, including the terminating null byte ('\0'), to the buffer pointed to by dest.
+* [`ft_strncpy`](ft_string/ft_strncpy.c)		- Copies the string pointed to by src at most n bytes, including the terminating null byte ('\0'), to the buffer pointed to by dest.
+* [`ft_strdup`](ft_string/ft_strdup.c)			- Copy the string.
+* [`ft_strndup`](ft_string/ft_strndup.c)		- Copy the string at most n bytes.
+* [`ft_strstr`](ft_string/ft_strstr.c)			- Finds the first occurrence of the substring needle in the string haystack.
 
 ### Functions from `<ft_strings.h>` library
 
 * [`ft_bzero`](ft_strings/ft_bzero.c)			- Write zeroes to a byte string.
+* [`ft_split`](ft_string/ft_split.c)			- Split string with delimiter into an array of strings.
+* [`ft_strrev`](ft_string/ft_strrev.c)			- Reverse the string s.
+* [`ft_strtok`](ft_string/ft_strtok.c)			- Breaks a string into a sequence of zero or more nonempty tokens.
+* [`ft_strtrim`](ft_string/ft_strtrim.c)		- Removes the space before and after of the string.
+* [`ft_strjoin`](ft_string/ft_strjoin.c)		- Concatenate two strings into a new string.
+* [`ft_strcjoin`](ft_string/ft_strcjoin.c)		- Concatenate two strings with c between them.
 
 ## 🛠️ Usage
 
