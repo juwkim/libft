@@ -97,12 +97,12 @@ For more detailed information, look at the [**subject of this project**](https:/
 ### Functions from `<ft_strings.h>` library
 
 * [`ft_bzero`](ft_strings/ft_bzero.c)			- Write zeroes to a byte string.
-* [`ft_split`](ft_string/ft_split.c)			- Split string with delimiter into an array of strings.
-* [`ft_strrev`](ft_string/ft_strrev.c)			- Reverse the string s.
-* [`ft_strtok`](ft_string/ft_strtok.c)			- Breaks a string into a sequence of zero or more nonempty tokens.
-* [`ft_strtrim`](ft_string/ft_strtrim.c)		- Removes the space before and after of the string.
-* [`ft_strjoin`](ft_string/ft_strjoin.c)		- Concatenate two strings into a new string.
-* [`ft_strcjoin`](ft_string/ft_strcjoin.c)		- Concatenate two strings with c between them.
+* [`ft_split`](ft_strings/ft_split.c)			- Split string with delimiter into an array of strings.
+* [`ft_strrev`](ft_strings/ft_strrev.c)			- Reverse the string s.
+* [`ft_strtok`](ft_strings/ft_strtok.c)			- Breaks a string into a sequence of zero or more nonempty tokens.
+* [`ft_strtrim`](ft_strings/ft_strtrim.c)		- Removes the space before and after of the string.
+* [`ft_strjoin`](ft_strings/ft_strjoin.c)		- Concatenate two strings into a new string.
+* [`ft_strcjoin`](ft_strings/ft_strcjoin.c)		- Concatenate two strings with c between them.
 
 ## 🛠️ Usage
 
