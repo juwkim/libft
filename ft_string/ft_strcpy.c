@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:19:18 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/02 10:07:18 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:52:19 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
  * to the buffer pointed to by dest. 
  * @param dest 
  * @param src 
- * @return
- * return char pointer pointing to '\0'
+ * @return dest
  */
 char	*ft_strcpy(char *dest, const char *src)
 {
-	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
+	char	*ptr;
+
+	ptr = dest;
+	while (*src != '\0')
+		*ptr++ = *src++;
+	*ptr = '\0';
 	return (dest);
 }

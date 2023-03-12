@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:33:02 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:28:58 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:58:12 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /**
  * @brief 
- * checks for any printable character including space.
+ * Checks for any printable character including space.
  */
 bool	ft_isprint(char c)
 {
-	assert(ft_isascii(c) == true);
 	return ((__ctype_table(c) & print) != 0);
 }

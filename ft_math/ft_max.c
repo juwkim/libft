@@ -6,15 +6,15 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:31:28 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:37:42 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:59:36 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
 /**
- * @brief 
- * Returns the larger of a and b.
+ * @brief
+ * @return The larger of a and b.
  */
 int	ft_max(int a, int b)
 {

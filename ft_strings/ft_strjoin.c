@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcjoin.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:50:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 02:24:04 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:19:17 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,19 @@
 
 /**
  * @brief
- * Concatenate two strings with c between them.
- * @param str1 
- * @param str2 
- * @param c 
- * @return
- * Returns str1 + c + str2
+ * Concatenate two strings into a new string.
+ * @param s1 
+ * @param s2 
+ * @return s1 + s2
  */
-char	*ft_strcjoin(const char *str1, const char *str2, char c)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char	*buf;
-	size_t	str1_size;
-	size_t	str2_size;
+	char			*buf;
+	const size_t	s1_size = ft_strlen(s1);
+	const size_t	s2_size = ft_strlen(s2);
 
-	assert(str2 != NULL);
-	if (str1 == NULL)
-		return ((char *) str2);
-	str1_size = ft_strlen(str1);
-	str2_size = ft_strlen(str2);
-	buf = (char *) malloc(sizeof(char) * (str1_size + str2_size + 2));
-	assert(buf != NULL);
-	ft_memcpy(buf, str1, str1 + str1_size);
-	buf[str1_size] = c;
-	ft_memcpy(buf + str1_size + 1, str2, str2 + str2_size);
-	buf[str1_size + str2_size + 1] = '\0';
+	buf = (char *) malloc(sizeof(char) * (s1_size + s2_size + 1));
+	ft_strcpy(buf, s1);
+	ft_strcpy(buf + s1_size, s2);
 	return (buf);
 }

@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:15:06 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:27:37 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:46:45 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
  * Appends the n bytes src string to the dest string.
  * @param dest 
  * @param src 
- * @param n 
+ * @param n
+ * @return dest
  */
-void	ft_strncat(char *dest, const char *src, size_t n)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	ft_memcpy(dest, src, src + n);
+	ft_strncpy(dest + ft_strlen(dest), src, n);
+	return (dest);
 }

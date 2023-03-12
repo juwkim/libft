@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:41:23 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/02 10:16:30 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:28:54 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
  * @brief
  * Copies n bytes from memory area src to memory area dest.
  * The memory areas must not overlap.
- * @return
- * return dest
+ * @return dest
  */
-void	*ft_memcpy(void *const dest, const void *const begin, \
-											const void *const end)
+void	*ft_memcpy(void	*dest, const void *src, size_t n)
 {
 	unsigned char		*dest_ptr;
 	unsigned char		*src_ptr;
-	const unsigned char	*end_ptr = end;
 
-	assert(dest != NULL && begin != NULL && end != NULL);
 	dest_ptr = (unsigned char *) dest;
-	src_ptr = (unsigned char *) begin;
-	while (src_ptr < end_ptr)
+	src_ptr = (unsigned char *) src;
+	while (n--)
 		*dest_ptr++ = *src_ptr++;
 	return (dest);
 }

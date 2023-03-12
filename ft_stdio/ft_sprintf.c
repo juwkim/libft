@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 21:57:31 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:52:33 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:01:09 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		__set_buf(char *buf);
  * @param ... 
  * @return
  * The number of characters written,
- * or a negative value if an output error occurred
+ * or a negative value if an output error occurred.
  */
 int	ft_sprintf(char *buf, const char *fmt, ...)
 {

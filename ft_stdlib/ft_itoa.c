@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:27:03 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/02 10:09:50 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:31:14 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
  * @param buf 
  * @param num 
  * @param radix
- * @return
- * return string
+ * @return The converted string.
  */
 char	*ft_itoa(int value, char *string, int radix)
 {
@@ -35,6 +34,6 @@ char	*ft_itoa(int value, char *string, int radix)
 			break ;
 	}
 	*ptr = '\0';
-	ft_strrev(string, ptr - 1);
+	ft_strrev(string);
 	return (string);
 }

@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:06:40 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:26:38 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:57:48 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /**
  * @brief 
- * checks for a blank character. that is, a space or a tab.
+ * Checks for a blank character. That is, a space or a tab.
  */
 bool	ft_isblank(char c)
 {
-	assert(ft_isascii(c) == true);
 	return ((__ctype_table(c) & blank) != 0);
 }

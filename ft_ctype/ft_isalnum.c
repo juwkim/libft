@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:04:24 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:24:32 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:58:37 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 /**
  * @brief 
- * checks for an alphanumeric character.
- * it is equivalent to (isalpha(c) || isdigit(c))
+ * Checks for an alphanumeric character.
+ * It is equivalent to (isalpha(c) || isdigit(c)).
  */
 bool	ft_isalnum(char c)
 {
-	assert(ft_isascii(c) == true);
 	return ((__ctype_table(c) & alnum) != 0);
 }

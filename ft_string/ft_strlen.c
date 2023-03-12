@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:52:42 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:26:48 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:03:58 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 /**
  * @brief 
- * Calculates the length of the string pointed to by str,
+ * Calculates the length of the string pointed to by s,
  * excluding the terminating null byte ('\0').
- * @param str 
- * @return Returns the number of bytes in the string pointed to by str.
+ * @param s 
+ * @return The number of bytes in the string pointed to by s.
  */
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
-	const char	*ptr = str;
+	const char	*ptr = s;
 
-	assert(str != NULL);
 	while (*ptr != '\0')
 		++ptr;
-	return (ptr - str);
+	return (ptr - s);
 }

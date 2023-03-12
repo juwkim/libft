@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:06:40 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:26:20 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:58:43 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /**
  * @brief
- * checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set
+ * Checks whether c is a 7-bit unsigned char value
+ * that fits into the ASCII character set.
  */
 bool	ft_isascii(char c)
 {

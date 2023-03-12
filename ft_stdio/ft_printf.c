@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:17:58 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:49:38 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:01:02 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param ... 
  * @return
  * The number of characters written,
- * or a negative value if an output error occurred
+ * or a negative value if an output error occurred.
  */
 int	ft_printf(const char *fmt, ...)
 {

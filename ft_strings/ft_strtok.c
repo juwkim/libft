@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 19:38:36 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:33:51 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:16:05 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param str 
  * @param delim 
  * @return
- * Return a pointer to the next token, or NULL if there are no more tokens.
+ * A pointer to the next token, or NULL if there are no more tokens.
  */
 char	*ft_strtok(char *str, char delim)
 {
@@ -34,7 +34,6 @@ char	*ft_strtok(char *str, char delim)
 	if (input == NULL)
 		return (NULL);
 	res = malloc(ft_strlen(input) + 1);
-	assert(res != NULL);
 	idx = 0;
 	while (input[idx] != '\0' && input[idx] != delim)
 	{

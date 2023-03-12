@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 02:06:52 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 18:51:23 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 03:58:04 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /**
  * @brief 
- * checks for a digit (0 through 9).
+ * Checks for a digit (0 through 9).
  */
 bool	ft_isdigit(char c)
 {
-	assert(ft_isascii(c) == true);
 	return ((__ctype_table(c) & digit) != 0);
 }

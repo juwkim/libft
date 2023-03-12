@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:18:07 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 23:39:29 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:32:24 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	__itoa(char *buf, unsigned long num, int base, int is_lower)
 		if (num == 0)
 			break ;
 	}
-	ft_strrev(buf, ptr - 1);
+	ft_strrev(buf);
 	return (ptr - buf);
 }

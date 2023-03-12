@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 00:47:12 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/01 21:26:53 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:30:51 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn);
  * Read a line from the fd.
  * @param fd
  * A file descriptor that's associated with the file.
- * @return char* 
+ * @return line.
  */
 char	*ft_get_next_line(int fd)
 {
@@ -30,8 +30,7 @@ char	*ft_get_next_line(int fd)
 	ssize_t		read_size;
 
 	line = NULL;
-	assert(fd >= 0);
-	if (rest && check_rest(&rest, &line))
+	if (rest != NULL && check_rest(&rest, &line) == true)
 		return (line);
 	read_size = read(fd, buf, BUFSIZE);
 	while (read_size > 0 && get_line(buf, &rest, read_size, &line) == 0)
@@ -44,9 +43,9 @@ static bool	check_rest(char **rest, char **line)
 	char				*temp;
 	const char *const	newline = ft_strchr(*rest, '\n');
 
-	if (*newline == '\0')
+	if (newline == NULL)
 		return (false);
-	*line = ft_strdup(*rest, newline);
+	*line = ft_strndup(*rest, newline - *rest);
 	if (*(newline + 1) == '\0')
 	{
 		free(*rest);
@@ -54,7 +53,7 @@ static bool	check_rest(char **rest, char **line)
 	}
 	else
 	{
-		temp = ft_strdup(newline + 1, *rest + ft_strlen(*rest));
+		temp = ft_strdup(newline + 1);
 		free(*rest);
 		*rest = temp;
 	}
@@ -68,18 +67,18 @@ static bool	get_line(char *buf, char **rest, ssize_t read_size, char **rtn)
 
 	buf[read_size] = '\0';
 	newline = ft_strchr(buf, '\n');
-	if (*newline != '\0' && *(newline + 1) != '\0')
+	if (newline != NULL && *(newline + 1) != '\0')
 	{
-		*rest = ft_strdup(newline + 1, buf + read_size);
+		*rest = ft_strdup(newline + 1);
 		*newline = '\0';
 	}
 	if (*rtn == NULL)
-		*rtn = ft_strdup(buf, newline);
+		*rtn = ft_strdup(buf);
 	else
 	{
 		temp = ft_strjoin(*rtn, buf);
 		free(*rtn);
 		*rtn = temp;
 	}
-	return (newline != buf + read_size);
+	return (newline != NULL);
 }

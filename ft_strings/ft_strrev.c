@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 02:47:23 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 02:07:48 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:19:24 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 /**
  * @brief 
- * Reverse the string from begin to end.
- * @param begin 
- * @param end 
+ * Reverse the string s.
+ * @param s
  */
-void	ft_strrev(char *begin, char *end)
+void	ft_strrev(char *s)
 {
 	char	tmp;
+	char	*end;
 
-	while (begin < end)
+	end = s + ft_strlen(s) - 1;
+	while (s < end)
 	{
-		tmp = *begin;
-		*begin = *end;
+		tmp = *s;
+		*s = *end;
 		*end = tmp;
-		++begin;
+		++s;
 		--end;
 	}
 }

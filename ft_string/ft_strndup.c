@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 04:45:32 by juwkim            #+#    #+#             */
-/*   Updated: 2023/03/13 04:31:46 by juwkim           ###   ########.fr       */
+/*   Created: 2023/02/27 17:39:40 by juwkim            #+#    #+#             */
+/*   Updated: 2023/03/13 04:08:11 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 /**
  * @brief 
- * Fills the first n bytes of the memory area pointed to by s
- * with the constant byte c.
- * @param s 
- * @param c 
- * @param n 
- * @return s
+ * Copy the string s at most n bytes.
+ * @param s
+ * @return the copied string.
  */
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strndup(const char *s, size_t n)
 {
-	unsigned char		*ptr;
-	const unsigned char	cc = (unsigned char) c;
+	char		*copy;
 
-	ptr = (unsigned char *) s;
-	while (n--)
-		*ptr++ = cc;
-	return (s);
+	copy = malloc(sizeof(char) * (n + 1));
+	ft_strncpy(copy, s, n);
+	return (copy);
 }

@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:02:56 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 00:49:11 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:00:28 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		__set_fd(int fd);
  * @param ... 
  * @return
  * The number of characters written,
- * or a negative value if an output error occurred
+ * or a negative value if an output error occurred.
  */
 int	ft_dprintf(int fd, const char *fmt, ...)
 {

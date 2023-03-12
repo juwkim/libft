@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 04:49:42 by juwkim            #+#    #+#             */
-/*   Updated: 2023/02/28 01:15:59 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/13 04:31:29 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 /**
  * @brief 
  * 
- * @param str 
+ * @param s 
  * @param c 
  * @return
- * returns a pointer to the first occurrence of the character c
- * in the string str.
+ * A pointer to the first occurrence of the character c
+ * in the string s.
  */
-char	*ft_strchr(const char *str, const char c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str != '\0' && *str != c)
-		++str;
-	return ((char *) str);
+	const unsigned char	cc = (unsigned char) c;
+
+	while (*s != '\0' && *s != cc)
+		++s;
+	return ((char *) s);
 }
